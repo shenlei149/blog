@@ -4,7 +4,7 @@ date: 2015-05-13 15:50:41
 tags: [内存, C++]
 categories:
  - 计算机
- - 计算机原理
+ - 计算机基础
 ---
 C/C++不外乎以下几种基本类型：bool，char，short，int，long，float，double，还有不常用的long long。
 
