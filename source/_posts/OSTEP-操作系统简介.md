@@ -2,6 +2,7 @@
 title: OSTEP | 操作系统简介
 tags:
   - 操作系统
+  - OSTEP
 categories:
   - 计算机
   - 计算机基础
