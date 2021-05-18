@@ -2,7 +2,9 @@
 title: 欧拉项目 | 381题 | 使用扩展欧几里得算法求逆元，利用Wilson理论得到阶乘模P之和
 date: 2015-06-20 15:09:18
 tags: [欧几里得, 乘法逆元, 模, 欧拉项目, Project Euler, 数学]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [题目381](https://projecteuler.net/problem=381 "Problem 381 - Project Euler")的描述如下：  
 对于一个质数p来说，S(p) = (∑(p-k)!) mod(p) 其中 1 ≤ k ≤ 5  

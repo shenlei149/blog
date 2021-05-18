@@ -2,7 +2,9 @@
 title: 欧拉项目 | 700题 | Eulercoin
 date: 2020-08-14 17:37:40
 tags: [欧拉项目, Project Euler, 质数]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [700题链接](https://projecteuler.net/problem=700 "Problem 700 - Project Euler")
 

@@ -2,7 +2,9 @@
 title: 欧拉项目 | 684题 | Inverse Digit Sum
 date: 2020-01-25 19:54:55
 tags: [欧拉项目, Project Euler]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [题目链接](https://projecteuler.net/problem=684 "Problem 684 - Project Euler")
 

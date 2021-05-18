@@ -2,7 +2,9 @@
 title: 欧拉项目 | 491题 | 能整除11的double pandigital number
 date: 2017-12-08 21:03:29
 tags: [欧拉项目, Project Euler, 整除, 排列组合]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [491题链接](https://projecteuler.net/problem=491 "Problem 491 - Project Euler")
 

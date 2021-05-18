@@ -2,7 +2,9 @@
 title: 欧拉项目 | 203题 | Squarefree的二项式系数
 date: 2019-06-23 17:29:38
 tags: [欧拉项目, Project Euler, 二项式系数]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [Problem 203](https://projecteuler.net/problem=203)
 

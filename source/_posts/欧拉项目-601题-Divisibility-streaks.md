@@ -2,7 +2,9 @@
 title: 欧拉项目 | 601题 | Divisibility streaks
 date: 2018-07-28 15:33:58
 tags: [欧拉项目, Project Euler, 整除, 数论]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [601题链接](https://projecteuler.net/problem=601 "Problem 601 - Project Euler")
 

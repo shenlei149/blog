@@ -2,7 +2,9 @@
 title: Pell方程 | 求特殊的二元二次方程的整数解 | 欧拉项目 | 100题
 date: 2014-11-12 18:13:31
 tags: [欧拉项目, Project Euler, 数学]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [原题链接](https://projecteuler.net/problem=100 "Problem 100 - Project Euler")  
 如果一个盒子里有21个有色的碟子，15个蓝色的和6个红色的。从中随机取两个，可知取到两个蓝碟子的几率是 P(BB) = (15/21)×(14/20) = 1/2。  

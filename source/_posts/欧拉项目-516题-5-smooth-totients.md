@@ -2,7 +2,9 @@
 title: 欧拉项目 | 516题 | 5-smooth totients
 date: 2018-07-27 11:18:39
 tags: [欧拉项目, Project Euler, 数论, 质数]
-categories: 数学
+categories:
+  - 数学
+  - 欧拉项目
 ---
 [516题链接](https://projecteuler.net/problem=516 "Problem 516 - Project Euler")
 
