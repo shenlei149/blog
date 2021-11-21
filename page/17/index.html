@@ -202,6 +202,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E9%9A%90%E8%97%8F%E7%9A%84%E5%B9%B3%E6%96%B9%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-206%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E9%9A%90%E8%97%8F%E7%9A%84%E5%B9%B3%E6%96%B9%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-206%E9%A2%98/" class="post-title-link" itemprop="url">隐藏的平方数 | 欧拉项目 | 206题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-03-11 17:06:24" itemprop="dateCreated datePublished" datetime="2014-03-11T17:06:24+08:00">2014-03-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E9%9A%90%E8%97%8F%E7%9A%84%E5%B9%B3%E6%96%B9%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-206%E9%A2%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/隐藏的平方数-欧拉项目-206题/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=206" title="Problem 206 - Project Euler">欧拉项目的第206题</a>描述如下：<br>找出唯一一个符合如下条件的数字：它的平方是具有1_2_3_4_5_6_7_8_9_0形式的数。每个_都代表了单个数字。</p>
+<p>首先，我们对题目给出的形式做一个分析。<br>平方数最后一个数字是零，那么我们要找的数字（假设是A）最后一位是零。A最后一位是零，那么平方之后的数字末尾有两个零。<br>所以，问题可以转化为找到一个数字（假设是B），平方具有1_2_3_4_5_6_7_8_9的形式。这里的B = A / 10。<br>现在，我们构造一个验证一个数的平方是否满足题意的正则表达式：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> Regex.IsMatch((i * i).ToString(), <span class="string">@&quot;1\d2\d3\d4\d5\d6\d7\d8\d9&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>然后，构造一个循环去找这个数。<br>其实呢，题目中说了，一定存在这样一个数，那么我们从最小可能满足题意的数100000003开始计算就好了，不用管循环的上限。  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">long</span> i = <span class="number">100000003</span>; ; )</span><br></pre></td></tr></table></figure>
+
+<p>再进一步考虑，既然肯定有满足题意的数字，那么平方后第一位肯定是1，不用我们自己去做判断了。于是，我改写了判定的做法：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s = (i * i).ToString();</span><br><span class="line"><span class="keyword">return</span> s[<span class="number">2</span>] == <span class="string">&#x27;2&#x27;</span> &amp;&amp; s[<span class="number">4</span>] == <span class="string">&#x27;3&#x27;</span> &amp;&amp; s[<span class="number">6</span>] == <span class="string">&#x27;4&#x27;</span> &amp;&amp; s[<span class="number">8</span>] == <span class="string">&#x27;5&#x27;</span> &amp;&amp; s[<span class="number">10</span>] == <span class="string">&#x27;6&#x27;</span> &amp;&amp; s[<span class="number">12</span>] == <span class="string">&#x27;7&#x27;</span> &amp;&amp; s[<span class="number">14</span>] == <span class="string">&#x27;8&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>一切就绪，让程序跑起来了，大概过了十几秒，结果出来了。<br>但是程序还能进一步优化。<br>考虑平方数最后一位是9，只有尾数是3或者7的数字满足题意。那么，添加一个判断让循环更快：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i % <span class="number">10</span> == <span class="number">3</span>)</span><br><span class="line">&#123;</span><br><span class="line">    i += <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    i += <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案几乎一瞬间就出来。</p>
+<p>欧拉项目中的部分题目，由于数字不是很大，用最原始最暴力的算法，也能很快（小于1分钟）得到结果。但是，如果愿意进一步分析下，提高一下效率，总能在几秒（甚至是小于1秒）这个量级得到结果。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/Life/%E5%B0%8F%E6%8A%84%EF%BC%8C%E4%BD%9C%E5%BC%8A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1042,113 +1143,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/Life/%E6%96%B0%E5%91%98%E5%B7%A5%E5%9F%B9%E8%AE%AD%E5%BF%83%E5%BE%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/Life/%E6%96%B0%E5%91%98%E5%B7%A5%E5%9F%B9%E8%AE%AD%E5%BF%83%E5%BE%97/" class="post-title-link" itemprop="url">新员工培训心得</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-08-19 22:20:19" itemprop="dateCreated datePublished" datetime="2013-08-19T22:20:19+08:00">2013-08-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Life/%E6%96%B0%E5%91%98%E5%B7%A5%E5%9F%B9%E8%AE%AD%E5%BF%83%E5%BE%97/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Life/新员工培训心得/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>过去两周，参加了校招新员工培训。学到了很多东西。<br>特别是上周，连续几天加班到9点10点去做项目，不过结果还错，我们team获得了Best UI和Best Presentation两个奖哈哈。</p>
-<p>下面总结了一些新的体会：</p>
-<ol>
-<li><p>数据库操作非常慢，耗时长，应该尽可能去优化。<br>比如，<br>所有的查询都有时间参数，那么用时间建立索引，以节约查询的时间。<br>经过测试，发现提交一次查询很慢，查询的结果集大小几乎没有影响，改进是大量减少查询次数。</p>
-</li>
-<li><p>方法很重要，值得花时间去实现更快的方法。（当然，要权衡寻找新方法所花的时间和新方法所能节省的时间）<br>比如，<br>将分析完的数据从HDFS导入SQL Database。花了近2个小时找了更快的方式，节约的时间远远超出2小时。<br>更重要的是，周四晚发现一个bug，如果没有更好的方法，那么到周五很可能不能导出所有的数据。<br>如果新方法是替代手动操作，就更有必要了。</p>
-</li>
-<li><p>任务的分拆数量等于独立模块的数量。<br>也就是说，一个人负责一个独立的模块。如果两个人在一个独立的模块，效率的提高很有限。所谓的人月神话。<br>手术室模型在我们团队也很适用，一个人主力去解决一个问题，其他人为他提供支持，做一些外围工作。</p>
-</li>
-<li><p>不到最后时刻，不言弃。<br>我们到了周五中午，还没有做好search功能，大家协作努力，最后还是发布了search功能。同时还fix了几个bug。</p>
-</li>
-<li><p>多个原型问题。<br>周五和hoyle商量ppt的时候，告诉他我们的Plan A还没有完全ready，不过有Plan B和C。<br>但是hoyle的回答很不一样，说他刚入职的时候也会像我们这样，但是现在不会了。原因是太多手准备说明我们时间安排的不合理。<br>关于这个问题，求解释。</p>
-</li>
-<li><p>技术的重要性<br>技术重要吗？很重要，但是没有我想象的那么重要（相比培训前）。<br>写代码本身是很简单的事情，几乎处于整个项目最不重要的地位。<br>更重要的是利用相关的资源达成自己目的，如何去得到并运用资源很重要。<br>解决一个问题，技术本身不具备不可替代性，很多不同的技术都能解决同一个问题。<br>所以解决问题本身才是重要的，而不是纠结用什么技术。<br>学习技术很容易，只要你愿意花精力去钻研，总会弄明白。<br>那么，重要的事情是学习能力，执行能力等等。<br>或许，这也是为什么微软找人看中的是一个人的潜力，而不是这个人目前会做什么。</p>
-</li>
-<li><p>视野<br>视野决定了很多东西。<br>做事之前要多想，想想问题和其他问题的联系。做事前要多问问自己如何能做的更好。<br>要看的更多，更远，而不仅仅局限于解决当前问题。只有这样，才能掌握更多的东西，理解更多。</p>
-</li>
-<li><p>其他<br>时间紧迫导致理想和现实的差距。刚开始大家想的都很好，理想很丰满，但是实际做的事情和构建一个可维护可运行的软件相去甚远，现实很骨感。<br>事物的波浪式前进。每当我们感觉要最终成型的时候，又从各个角落冒出来一大堆问题。</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1216,7 +1215,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">190</span>
+          <span class="site-state-item-count">191</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1229,7 +1228,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

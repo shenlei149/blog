@@ -202,6 +202,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E7%82%B9%E6%98%AF%E4%B8%8D%E6%98%AF%E5%9C%A8%E6%9F%90%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2%E5%86%85-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-102%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E7%82%B9%E6%98%AF%E4%B8%8D%E6%98%AF%E5%9C%A8%E6%9F%90%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2%E5%86%85-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-102%E9%A2%98/" class="post-title-link" itemprop="url">判断一个点是不是在某个三角形内 | 欧拉项目 | 102题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-11-04 14:48:10" itemprop="dateCreated datePublished" datetime="2014-11-04T14:48:10+08:00">2014-11-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E7%82%B9%E6%98%AF%E4%B8%8D%E6%98%AF%E5%9C%A8%E6%9F%90%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2%E5%86%85-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-102%E9%A2%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/判断一个点是不是在某个三角形内-欧拉项目-102题/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=102" title="Problem 102 - Project Euler">题目</a>是：文件中的三角形中有多少个内部包含原点？ </p>
+<p>在笛卡尔平面上随机取三个不同的点，其中-1000 ≤ x, y ≤ 1000，会形成一个三角形。<br>考虑如下两个三角形：<br>A(-340,495), B(-153,-910), C(835,-947)<br>X(-175,41), Y(-421,-714), Z(574,-645)<br>可以证明三角形ABC包含原点在其内部，而三角形XYZ则不包含。<br>triangles.txt 包含一千个随机三角形，求其中有多少个三角形的内部包含原点。</p>
+<p>如何判断一个点是不是在某个三角形内呢？<br>一个不太笨的方法是，如果点C和点O在直线AB的同侧，点B和点O在直线AC的同侧，点A和点O在直线BC同侧，那么点O就在三角形ABC里面。<br>好了，问题转化为，如何判断两个点在某直线的同侧。<br>算法导论中有说这个问题，向量AB和向量AC叉积，向量AB和向量AO叉积，如果两个叉积结果的符号相同，那么说明点C和点O在AB的同侧。<br>思路都解释完了，下面写代码：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">IsSameSide</span>(<span class="params"><span class="built_in">int</span> xa, <span class="built_in">int</span> ya, <span class="built_in">int</span> xb, <span class="built_in">int</span> yb, <span class="built_in">int</span> xc, <span class="built_in">int</span> yc, <span class="built_in">int</span> xo, <span class="built_in">int</span> yo</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">long</span>)CrossProduct(xa, ya, xb, yb, xc, yc) * CrossProduct(xa, ya, xb, yb, xo, yo) &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">CrossProduct</span>(<span class="params"><span class="built_in">int</span> xa, <span class="built_in">int</span> ya, <span class="built_in">int</span> xb, <span class="built_in">int</span> yb, <span class="built_in">int</span> xc, <span class="built_in">int</span> yc</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> xv = xb - xa;</span><br><span class="line">    <span class="built_in">int</span> yv = yb - ya;</span><br><span class="line">    <span class="built_in">int</span> xu = xc - xa;</span><br><span class="line">    <span class="built_in">int</span> yu = yc - ya;</span><br><span class="line">    <span class="keyword">return</span> xv * yu - yv * xu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要解释的是，坐标小于1000，叉积结果大约是十的六次方数量级，IsSameSide判断的时候如果不强转成long型，可能会溢出，造成判断错误。</p>
+<p>给出的数据比较大，需要写一点点代码去解析它们。<br>下面是完成的代码：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">string</span>[] triangles = Triangles.Split(<span class="keyword">new</span> <span class="built_in">char</span>[] &#123; <span class="string">&#x27;\r&#x27;</span>, <span class="string">&#x27;\n&#x27;</span> &#125;, StringSplitOptions.RemoveEmptyEntries);</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> xo = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">int</span> yo = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">string</span> triangle <span class="keyword">in</span> triangles)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>[] tmp = triangle.Split(<span class="string">&#x27;,&#x27;</span>).Select(s =&gt; <span class="built_in">int</span>.Parse(s)).ToArray();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> xa = tmp[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">int</span> ya = tmp[<span class="number">1</span>];</span><br><span class="line">    <span class="built_in">int</span> xb = tmp[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">int</span> yb = tmp[<span class="number">3</span>];</span><br><span class="line">    <span class="built_in">int</span> xc = tmp[<span class="number">4</span>];</span><br><span class="line">    <span class="built_in">int</span> yc = tmp[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (IsSameSide(xa, ya, xb, yb, xc, yc, xo, yo)</span><br><span class="line">        &amp;&amp; IsSameSide(xa, ya, xc, yc, xb, yb, xo, yo)</span><br><span class="line">        &amp;&amp; IsSameSide(xb, yb, xc, yc, xa, ya, xo, yo))</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> count;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1049,115 +1143,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/" class="post-title-link" itemprop="url">不使用 加 操作实现两个数的加法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-09-28 15:30:12" itemprop="dateCreated datePublished" datetime="2014-09-28T15:30:12+08:00">2014-09-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/不使用-加-操作实现两个数的加法/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>看到这个题，第一直觉是使用位运算。为什么这么说呢？首先，不能使用 + 这个符号，你还能用什么呢；其次，计算机就是使用位运算来计算加法的。</p>
-<p>我们需要真的搞明白加法的原理，然后用程序去实现它。</p>
-<p>简单起见，我们考虑十进制。<br>想想我们小时候是如何计算759 + 674的，末位相加，大于10了，然后进一。然后加十位上的数字，还要加上个位的进位。以此类推。计算二进制也是类似的，对每一位相加，如果可能，还要进位。</p>
-<p>好了，让我们分离加法操作，分成<strong>加</strong>和<strong>进位</strong>两部分。  </p>
-<ol>
-<li>759 + 674，如果只加不进位，得到323；  </li>
-<li>只考虑进位，得到1110；  </li>
-<li>把两部分相加在一起，得到1433。  </li>
-</ol>
-<p>现在来看看如何进行二进制操作：  </p>
-<ol>
-<li>只加不进位，相当于位运算里面的异或XOR；  </li>
-<li>只考虑进位，相当于和操作AND且左移一位；  </li>
-<li>重复这个过程，直到没有进位为止。<br>因为十进制分析那里，第三步相当于用了加。程序上，不能使用加，只好想办法再继续递归下去。没有进位，就是第二个加数为零，那么第一个加数就是要求的和。</li>
-</ol>
-<p>下面是代码：  </p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">Add</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> sum = a ^ b;</span><br><span class="line">    <span class="built_in">int</span> carry = (a &amp; b) &lt;&lt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Add(sum, carry);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1225,7 +1215,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">190</span>
+          <span class="site-state-item-count">191</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1238,7 +1228,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

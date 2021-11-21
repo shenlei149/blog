@@ -202,6 +202,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-145%E9%A2%98-%E5%8F%AF%E9%80%86%E6%95%B0%E7%9A%84%E6%95%B0%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-145%E9%A2%98-%E5%8F%AF%E9%80%86%E6%95%B0%E7%9A%84%E6%95%B0%E9%87%8F/" class="post-title-link" itemprop="url">欧拉项目 | 145题 | 可逆数的数量</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-12 14:21:15" itemprop="dateCreated datePublished" datetime="2019-10-12T14:21:15+08:00">2019-10-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-145%E9%A2%98-%E5%8F%AF%E9%80%86%E6%95%B0%E7%9A%84%E6%95%B0%E9%87%8F/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-145题-可逆数的数量/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=145" title="Problem 145 - Project Euler">145题链接</a></p>
+<p>有这样一些数n，和所以数字逆着写的数reverse(n)之和的所有数字都是奇数。比如36+63=99，409+904=1313等等，这些数我们称之为可逆数。有一个限制条件就是开头不能是0。<br>问题是，小于十亿（1,000,000,000)的数中有多个可逆数。</p>
+<p>这道题可以通过分类讨论来解决。<br>首先n的长度是奇数和偶数明显是两类，因为这意味着有没有正好居于中间的数，对于奇数长度来说，有，且反过来还是该数字。  </p>
+<p>我们先来考虑长度是偶数的时候。</p>
+<p>长度为2的时候，不妨把该数写作AB，其逆就是BA。以A+B是否大于等于10来讨论。<br>大于等于10的情况，不妨令A+B=1C，那么AB+BA=1(C+1)C，C和C+1奇偶性必然不同，不可能数字都是奇数。<br>小于10的情况，那么A+B是奇数。A是偶数，可选2,4,6,8，B是奇数，可选1,3,5,7,9，之和小于10的情况一共10种可能性。反之，A是奇数，B是偶数，也是10种。<br>所以长度为2的可逆数一共20个。</p>
+<p>长度为4的时候，该数可写作ABCD，其逆就是DCBA。以A+D是否大于等于10来讨论。<br>大于等于10的情况，不妨令A+B=1E。若B+C大于等于10，和最后一位是E，右起第四位是1+E，不可能都是奇数；若B+C小于10，不能是9，否则和的右起第二位是0，不满足题意，如果是其他奇数，右起第二位和1+B+C，而右起第三位是B+C，也不可能同时是奇数。<br>小于10的情况，A和D的取值可能性有20种，中间的BC退化为长度为2的情况，取值的可能性有30种（偶数可以为0，因为不打头了），利用乘法原则，共有600个可逆数。<br>所以长度为4的可逆数一共600个。</p>
+<p>长度为6的时候，该数可以写作ABCDEF，其逆就是FEDCBA。以A+F是否可以大于等于10来讨论。<br>大于等于10的情况，原理和4位时一样，B+E不能大于等于10。能小于10吗？为了保证B+E得到的值和E+B+1得到的值一样，那么C+D就要大于10。但是E+B不进位，而D+C进位，导致右起3，4位一定不能同时是奇数。<br>小于10的情况，中间4个数回到了上一种情况，所以可能性是20*30*30=18,000。<br>所以长度为6的可逆数一共是18,000个。</p>
+<p>长度为8的时候，该数可以写作ABCDEFGH，其逆就是HGFEDCBA。同样，以A+H是否可以大于等于10来讨论。<br>在大于等于10的情况下，原理同上，B+G不能大于等于10，那么B+G就只能小于10了。同上，C+F就要大于等于10。为了使得中间两位的奇偶性一致，那么E+D要大于10，结果就是右起第三位数字是C+F模10（因为B+G小于10），而右起第六位数字是C+F+1模10，这俩不可能同时是奇数。<br>小于10的情况，中间六个数字回到了上一种情况，所以可逆数是20*30*30*30=540,000。<br>所以长度为8的可逆数一共是540,000个。</p>
+<p>现在来讨论n的长度为奇数。<br>如果长度是1，反过来是其本身，那么和是偶数，不符合题意。  </p>
+<p>长度是3，可写作ABC，可逆数是CBA。中间数字的和是偶数，那么A+C必须大于10，为了右起第一位和第三位奇偶性相同，那么2B不能进位，所以B要小于等于4，那么B有五种可取值；我们现在讨论A和C，A是奇数1,3,5,7,9，C是偶数2,4,6,8，其和大于10的可能性有10中可能性，A是偶数C是奇数也有10种，那么可逆数是5*(10+10)=100。</p>
+<p>长度是5时，可写作ABCDE，可逆数是EDCBA。中间是2C，所以B+D是大于等于10的，右起第一位是E+A，但是右起第五位是A+E+1，不可能同时是奇数，所以n的长度不可能是5。</p>
+<p>长度为7时，可写作ABCDEFG，可逆数时GFEDCBA。中间是2D，所以C+E时大于等于10的。根据前面的分析，B+F必须小于10；进而2D要小于10。右起第六位会接受来此C+E的进位，那么右起第二位也必须接受一个进位，所以A+G必须大于10。2D小于10得出D有5种可能性，A+G大于10且和为奇数共有20种可能性，C+E大于10且和为奇数也有20种，B+F小于10且为偶数的可能性有25种。所以可逆数是5*20*20*25=50,000。</p>
+<p>长度为9的时候，可写作ABCDEFGHI，其可逆数是IHGFEDCBA。由前面的分析可知D+F要大于等于10，那么为了让右起第三位G+C和右起第七位C+G同时为奇数，那么H+B也必须大于10，那么A+I得到B+H的进位，无法和右起第一位I+A同奇偶，矛盾，所以长度不能是9。</p>
+<p>综上，小于十亿的可逆数是608720个。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-348%E9%A2%98-%E4%B8%80%E4%B8%AA%E5%B9%B3%E6%96%B9%E6%95%B0%E5%92%8C%E4%B8%80%E4%B8%AA%E7%AB%8B%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C%E6%98%AF%E5%9B%9E%E6%96%87%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1063,121 +1165,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-96%E9%A2%98-%E6%95%B0%E7%8B%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-96%E9%A2%98-%E6%95%B0%E7%8B%AC/" class="post-title-link" itemprop="url">欧拉项目 | 96题 | 数独</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-10-20 10:57:39" itemprop="dateCreated datePublished" datetime="2018-10-20T10:57:39+08:00">2018-10-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">欧拉项目</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-96%E9%A2%98-%E6%95%B0%E7%8B%AC/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-96题-数独/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=96" title="Problem 96 - Project Euler">96题链接</a></p>
-<p>数独，一个很经典的填数字游戏。规则也很简单，每一行、每一列、九个九宫格的九个数字不重复。<br>设计很好的数独游戏只有一个解，题目中也假设了这一点。<br>题目最后要求五十个数独的解，然后计算左上角三位数之和。<br>这个题对我来说还算比较简单，只需要把我人肉做数独游戏的方法写成程序就好了。</p>
-<p>由于整体思路非常清晰，我采用了自上而下的设计方式，几乎一气呵成了整个程序，除了debug了一个小地方fix了一个bug外。<br>我需要一个函数把题目给的txt下载下来并一行一行的读到一系列二位数组中。<br>对于每个二维数组，就是一个数独题目，然后求解，得到左上角的三位数。求和。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">int</span> Length = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">GetAnswer</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> lines = GetContent();</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span>[,] soDoku = <span class="keyword">new</span> <span class="built_in">int</span>[Length, Length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> line = lines[<span class="number">10</span> * i + j + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> k = <span class="number">0</span>; k &lt; Length; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                soDoku[j, k] = Convert.ToInt32(line[k].ToString());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        sum += GetTopLeft(SolveSuDoku(soDoku));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>GetContent()</code>函数很简单，下载文件，切分行。如果愿意的话，甚至能写成一行。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span>[] <span class="title">GetContent</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    WebClient client = <span class="keyword">new</span> WebClient();</span><br><span class="line">    <span class="built_in">string</span> content = client.DownloadStri(<span class="string">&quot;https://projecteuler.net/project/resources/p096_sudoktxt&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> content.Split(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>GetTopLeft(int[,] soDoku)</code>函数相对也比较简单，拿到二维数组的左上角三个数字，拼成<code>string</code>然后转成<code>int</code>即可。或者是第一位乘以100加第二位乘以10加第三位。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">GetTopLeft</span>(<span class="params"><span class="built_in">int</span>[,] soDoku</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>.Parse(<span class="string">$&quot;<span class="subst">&#123;soDoku[<span class="number">0</span>, <span class="number">0</span>]&#125;</span><span class="subst">&#123;soDoku[<span class="number">0</span>, <span class="number">1</span>]&#125;</span><span class="subst">&#123;soDoku[<span class="number">0</span>, <span class="number">2</span>]&#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最复杂的部分就是解数独了。<br>解数独就是在不停的猜测和测试，整个过程显然是递归的。<br>找个一个空，可能有几个情况，选一个填进去，依旧是未完成的数组，再来一轮，一轮，直到完成。整个过程是一个树，分了很多叉。题目告诉我们只有一个解，那么只有一个叶子节点是完整的解，其他叶子节点都不合法，有矛盾的地方，比如某个点所在的行和列出现了重复数字。<br>首先，我们判断数独是否完成，如果是，则返回该解。<br>如果没有，我们需要找一个点，该点没有被填写数字，且可能填的数字尽可能的少，这种情况下该节点的子树才最少，效率能尽可能的高。<code>FindMinimalPoint</code>返回参数包含三项，前两者描述的该节点的位置，第三项是可能的值。如果<code>Item3</code>是空的话，那么说明当前的数独有矛盾，返回<code>null</code>。试图尝试所有的可能性，如果有解，则返回，如果所有的可能性都无解的话，走到最后一行返回<code>null</code>。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span>[,] SolveSuDoku(<span class="built_in">int</span>[,] soDoku)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (IsCompleted(soDoku))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> soDoku;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> point = FindMinimalPoint(soDoku);</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> v <span class="keyword">in</span> point.Item3)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span>[,] newSoDoku = soDoku.Clone() <span class="keyword">as</span> <span class="built_in">int</span>[,];</span><br><span class="line">        newSoDoku[point.Item1, point.Item2] = v;</span><br><span class="line">        <span class="keyword">var</span> ret = SolveSuDoku(newSoDoku);</span><br><span class="line">        <span class="keyword">if</span> (ret != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果实现<code>FindMinimalPoint</code>呢？遍历非0点，找到可能的值（<code>FindVaulesAt</code>），记录下可能的值最少的点坐标和对应的值并返回。对于<code>FindVaulesAt</code>函数，很可能返回0个解，就是说该数独有矛盾。<code>minList</code>在初始化的时候写了十个值，目的是比九大，其实这里写九个也没问题，因为最小值肯定比九要小。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> (<span class="params"><span class="built_in">int</span>, <span class="built_in">int</span>, List&lt;<span class="built_in">int</span>&gt;</span>) <span class="title">FindMinimalPoint</span>(<span class="params"><span class="built_in">int</span>[,] soDoku</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> minRow = <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">int</span> minCol = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">var</span> minList = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;() &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; Length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (soDoku[i, j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> values = FindVaulesAt(i, j, soDoku);</span><br><span class="line">                <span class="keyword">if</span> (values.Count &lt; minList.Count)</span><br><span class="line">                &#123;</span><br><span class="line">                    minList = values;</span><br><span class="line">                    minRow = i;</span><br><span class="line">                    minCol = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (minRow, minCol, minList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>FindVaulesAt</code>想法很直接。每个空可能填入一到九九个数字，排除所在行、所在列和所在的九宫格已经出现的数字即可。<br>文章开头提到fix了一个小bug就是在这个函数，一开始row的初始值写成了<code>i % 3</code>，<code>row &lt; i - i % 3 + 3</code>，进而没能得到正确的可能的值。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;<span class="built_in">int</span>&gt; <span class="title">FindVaulesAt</span>(<span class="params"><span class="built_in">int</span> i, <span class="built_in">int</span> j, <span class="built_in">int</span>[,] soDoku</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    List&lt;<span class="built_in">int</span>&gt; values = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> k = <span class="number">0</span>; k &lt; Length; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        values.Remove(soDoku[i, k]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> k = <span class="number">0</span>; k &lt; Length; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        values.Remove(soDoku[k, j]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> row = i - i % <span class="number">3</span>; row &lt; i - i % <span class="number">3</span> + <span class="number">3</span>; row++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> col = j - j % <span class="number">3</span>; col &lt; j - j % <span class="number">3</span> + <span class="number">3</span>; col++)</span><br><span class="line">        &#123;</span><br><span class="line">            values.Remove(soDoku[row, col]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> values;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后，给出整个拼图的最后一块<code>IsCompleted</code>。如果所有空都不是0，说明数独已经求解完毕了。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">IsCompleted</span>(<span class="params"><span class="built_in">int</span>[,] soDoku</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> cell <span class="keyword">in</span> soDoku)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (cell == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1245,7 +1237,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">190</span>
+          <span class="site-state-item-count">191</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1258,7 +1250,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
