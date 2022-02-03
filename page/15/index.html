@@ -202,6 +202,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%AD%89%E6%A6%82%E7%8E%87%E7%9A%84%E4%BB%8En%E4%B8%AA%E6%95%B4%E6%95%B0%E4%B8%AD%E9%80%89%E6%8B%A9m%E4%B8%AA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%AD%89%E6%A6%82%E7%8E%87%E7%9A%84%E4%BB%8En%E4%B8%AA%E6%95%B4%E6%95%B0%E4%B8%AD%E9%80%89%E6%8B%A9m%E4%B8%AA/" class="post-title-link" itemprop="url">等概率的从n个整数中选择m个</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-09-29 15:45:17" itemprop="dateCreated datePublished" datetime="2014-09-29T15:45:17+08:00">2014-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%AD%89%E6%A6%82%E7%8E%87%E7%9A%84%E4%BB%8En%E4%B8%AA%E6%95%B4%E6%95%B0%E4%B8%AD%E9%80%89%E6%8B%A9m%E4%B8%AA/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/等概率的从n个整数中选择m个/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>给一个数组，其中包含n个整数，要求等概率的从中选取m个整数。</p>
+<p>这道题挺简单的，在《编程珠玑》这本书中有讲解，想我两年前找工作的时候，认真的看了这本书的大多数内容，受益颇多。<br>这本书的作者提到他是从《计算机程序设计艺术》看到的一个解决方法。《计算机程序设计艺术》这本书也是好书，曾经看了第一卷的多数内容，实在太高端，后面想继续看，但是一直没有再去图书馆借，日后有机会，还是多读读。</p>
+<p>废话不多说。解题的关键点是，从s个数中，选择r个，那么以概率r/s来选择。整个过程要遍历n个整数，每次都动态的以r/s的概率来要选择当前的这一个。下面是代码：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span>[] <span class="title">PickM</span>(<span class="params"><span class="built_in">int</span>[] a, <span class="built_in">int</span> m</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    List&lt;<span class="built_in">int</span>&gt; result = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">    <span class="built_in">int</span> n = a.Length;</span><br><span class="line">    Random rand = <span class="keyword">new</span> Random(DateTime.Now.Millisecond);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (rand.Next(<span class="number">0</span>, n - i) &lt; m)</span><br><span class="line">        &#123;</span><br><span class="line">            result.Add(a[i]);</span><br><span class="line">            m--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result.ToArray();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1053,93 +1145,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/Life/%E5%A6%B9%E5%A6%B9%E9%95%BF%E5%A4%A7%E4%BA%86-%E6%88%91%E4%B9%9F%E8%A6%81%E6%89%BF%E6%8B%85%E8%B5%B7%E6%9B%B4%E5%A4%9A%E6%9B%B4%E5%A4%A7%E7%9A%84%E8%B4%A3%E4%BB%BB%E4%BA%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/Life/%E5%A6%B9%E5%A6%B9%E9%95%BF%E5%A4%A7%E4%BA%86-%E6%88%91%E4%B9%9F%E8%A6%81%E6%89%BF%E6%8B%85%E8%B5%B7%E6%9B%B4%E5%A4%9A%E6%9B%B4%E5%A4%A7%E7%9A%84%E8%B4%A3%E4%BB%BB%E4%BA%86/" class="post-title-link" itemprop="url">妹妹长大了 | 我也要承担起更多更大的责任了</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-08-12 11:30:24" itemprop="dateCreated datePublished" datetime="2014-08-12T11:30:24+08:00">2014-08-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Life/%E5%A6%B9%E5%A6%B9%E9%95%BF%E5%A4%A7%E4%BA%86-%E6%88%91%E4%B9%9F%E8%A6%81%E6%89%BF%E6%8B%85%E8%B5%B7%E6%9B%B4%E5%A4%9A%E6%9B%B4%E5%A4%A7%E7%9A%84%E8%B4%A3%E4%BB%BB%E4%BA%86/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Life/妹妹长大了-我也要承担起更多更大的责任了/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>半个月前，我妹一个人来北京玩。来之前总觉得她一个人，不能独立坐火车，坐飞机，她能行吗？</p>
-<p>来了之后发现，她能把自己照顾的很好。是啊，她已经是快16岁的大姑娘了。有了一定独立生活的能力了。</p>
-<p>想想我15岁的时候，我一个人到乌鲁木齐读书，人生地不熟的，住校读书，要知道，这是我第一次离开了石河子市。其实，石河子地区很大，但是除了生活的149团，就去过石河子市。18岁的时候，又只身一人，坐着44小时的硬座，来到北京读书。第一次离开新疆，来到遥远的首都。那个时候，什么也不太懂，第一次到这么大的一个城市。不过，那个时候的我也过得还行，慢慢的成长起来。</p>
-<p>回到我妹这里，已经不再是我记忆中的小孩子了。是啊，不知不觉，我来北京都八年了。她也从一个小学生，到了高一。时间过得多快啊。<br>听说在火车上和大家打成一片，同时还知道注意安全，挺好的。而且，通过带她去北大，去警院，去我公司，对她是有一定的教育意义的，给她打了一点鸡血。知道好好学习了，以后才能有个不错的地方学习生活。</p>
-<p>再说说我，八年过去了，也都过了26的生日，谈婚论嫁都提上了日程。慢慢的，我要肩负起更多的责任，对家庭的责任，对妻子的责任。慢慢的，我也要组建一个自己的家庭，我，老婆，还有未来的孩子。更多的责任，需要我变得更强大，能够担当起做儿子的责任，担当起起做哥哥的责任，担当起做老公的责任，担当起做爸爸的责任。加油吧，路还很长，而且还充满着未知数，或许是荆棘，或许是鲜花，不管怎么样，都必须走下去，做一个有担当的人，足够了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1212,7 +1217,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">191</span>
+          <span class="site-state-item-count">192</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1255,7 +1260,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

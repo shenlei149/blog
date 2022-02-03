@@ -202,6 +202,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-613%E9%A2%98-%E6%AF%95%E8%BE%BE%E5%93%A5%E6%8B%89%E6%96%AF%E8%9A%82%E8%9A%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-613%E9%A2%98-%E6%AF%95%E8%BE%BE%E5%93%A5%E6%8B%89%E6%96%AF%E8%9A%82%E8%9A%81/" class="post-title-link" itemprop="url">欧拉项目-613题-毕达哥拉斯蚂蚁</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-10-27 09:33:02" itemprop="dateCreated datePublished" datetime="2018-10-27T09:33:02+08:00">2018-10-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-613%E9%A2%98-%E6%AF%95%E8%BE%BE%E5%93%A5%E6%8B%89%E6%96%AF%E8%9A%82%E8%9A%81/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-613题-毕达哥拉斯蚂蚁/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=613" title="Problem 613 - Project Euler">613题链接</a></p>
+<p>题目是毕达哥拉斯蚂蚁，用我们的说法是勾股蚂蚁。<br>题目大概是说，有个小蚂蚁落到了一个宽30cm，长40cm的直角三角形上，它会随机的选择一个方向爬，问从斜边爬出去的概率是多少。</p>
+<p><img src="/images/ProjectEuler-613-A.png" alt=""><br>上图是一个示意图，x轴的长度是4，y轴长度是3。把题目的30，40缩放为3，4，对求概率是没有影响的。<br>假设落到点P(x, y)，那么它从斜边爬出去的概率是多少呢？<br>角PAC的大小是<code>arctan(x/(3-y))</code>，角PBC的大小是<code>arctan(y/(4-x))</code>，那么角APB的大小是<code>PI/2+arctan(x/(3-y))+arctan(y/(4-x))</code>，那么从点P开始从斜边爬出去的概率就是<code>PI/2+arctan(x/(3-y))+arctan(y/(4-x)) / (2*PI)</code>。对三角形中的每一点计算概率然后除以三角形面积就是要求的概率了。  </p>
+<p><code>1 / 12 * PI * (integrate PI/2+arctan(x/(3-y))+arctan(y/(4-x)) dy dx, x=0..4, y=0..-3*x/4+3)</code></p>
+<p><code>PI/2</code>是常量，可以很容易计算出来，公式化简为</p>
+<p><code>1 / 12 * PI * (3 * PI + (integrate arctan(x/(3-y))+arctan(y/(4-x)) dy dx, x=0..4, y=0..-3*x/4+3))</code></p>
+<p>两个反正切，我不会算。。。借助了一下<a target="_blank" rel="noopener" href="https://www.wolframalpha.com/input/?i=integrate+arctan(x%2F(3-y))%2Barctan(y%2F(4-x))+dy+dx,+x%3D0..4,+y%3D0..-3*x%2F4%2B3">wolframalphal</a><br><img src="/images/ProjectEuler-613-B.png" alt=""><br>有了解析解之后，继续化简公式  </p>
+<p><code>1 / 12 * PI * (3 * PI + 3 * PI + ln((3^4*2^16*sqrt(3/5))/(5^12)))</code></p>
+<p><code>1/2 + PI/12*ln((3^4*4^8*sqrt(3/5))/(5^12))</code></p>
+<p>上式包含了3，4，5，同时分子和分母幂次相同，3的4次方乘以4的8次方，分母是5的12次方，是不是很神奇哈哈。其实想想就知道结果和3，4，5是相关的。</p>
+<p>有了解析式，计算出答案也就很容易了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-96%E9%A2%98-%E6%95%B0%E7%8B%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1116,98 +1215,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-491%E9%A2%98-%E8%83%BD%E6%95%B4%E9%99%A411%E7%9A%84double-pandigital-number/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-491%E9%A2%98-%E8%83%BD%E6%95%B4%E9%99%A411%E7%9A%84double-pandigital-number/" class="post-title-link" itemprop="url">欧拉项目 | 491题 | 能整除11的double pandigital number</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-12-08 21:03:29" itemprop="dateCreated datePublished" datetime="2017-12-08T21:03:29+08:00">2017-12-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">欧拉项目</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-491%E9%A2%98-%E8%83%BD%E6%95%B4%E9%99%A411%E7%9A%84double-pandigital-number/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-491题-能整除11的double-pandigital-number/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=491" title="Problem 491 - Project Euler">491题链接</a></p>
-<p>一个数，使用两次0-9这十个数字，被称为double pandigital number，那么有多少个这能被11整除的double pandigital number呢？</p>
-<p>首先我们要明白，遍历所有的double pandigital number，然后再看看是否能整除11这种直接的暴力算法肯定是不行的，因为double pandigital number数太多了，大约是20!/(2^10)*0.9。<br>那怎么办呢？先考虑能被11整除的数的性质，奇位数的数字之和减去偶位数的数字之和，能被11整除。<br>所以，我们不需要精确的知道数字是多少，只要通过排列组合知识，把满足题意的数字的个数计算出来就好。</p>
-<p>从20个里面选择10个数字作为奇位数上的数字，C(20, 10) = 184756，这个量级做循环操作还是能搞定的。<br>选出了奇位数的数字，很容易就能得到偶位数的数字。<br>有了这些数字我们就能通过排列组合的知识来计算个数了。<br>如果没有数字重复，结果是10!，每出现一个数字重复，就除以2（重复数字交换，还是同一个数字）。<br>这里忽略了两个问题。<br>一个是0开头的没有被排除，不管怎么折腾，总会有0在第一位，所以把总结果乘以0.9就好了。<br>第二个问题是，选择出来的奇位数可能重复，因为我们传入的参数有两个0，两个1，等等，对于组合算法来说，选择第一个0和选择第二个0是两种不同的组合，但是对于我们组成数字来说，没有区别，所以我们还需要一个集合，记住那些被计算过了的被选择出来的奇位数。  </p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">long</span> <span class="title">GetAnswer</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">long</span> ret = <span class="number">0</span>;</span><br><span class="line">    HashSet&lt;<span class="built_in">string</span>&gt; combinations = <span class="keyword">new</span> HashSet&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">    <span class="keyword">var</span> allDigits = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt; &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9</span> &#125;;</span><br><span class="line">    <span class="keyword">var</span> odds = Utils.Combination(allDigits, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> odd <span class="keyword">in</span> odds)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> sum = odd.Sum();</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">23</span> || sum == <span class="number">34</span> || sum == <span class="number">45</span> || sum == <span class="number">56</span> || sum == <span class="number">67</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> com = <span class="built_in">string</span>.Join(<span class="string">&quot;_&quot;</span>, odd);</span><br><span class="line">            <span class="keyword">if</span> (!combinations.Contains(com))</span><br><span class="line">            &#123;</span><br><span class="line">                combinations.Add(com);</span><br><span class="line">                <span class="keyword">var</span> even = GetRemainNumbers(odd);</span><br><span class="line">                ret += GetPCount(even) * GetPCount(odd);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret * <span class="number">9</span> / <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">long</span> <span class="title">GetPCount</span>(<span class="params">IEnumerable&lt;<span class="built_in">int</span>&gt; source</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">long</span> ret = Factorial10;</span><br><span class="line">    <span class="built_in">int</span> n = <span class="number">10</span> - source.Distinct().Count();</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ret /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> IEnumerable&lt;<span class="built_in">int</span>&gt; <span class="title">GetRemainNumbers</span>(<span class="params">IEnumerable&lt;<span class="built_in">int</span>&gt; subtracter</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> bits = <span class="keyword">new</span> <span class="built_in">bool</span>[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> bit <span class="keyword">in</span> subtracter)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (bits[bit * <span class="number">2</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            bits[bit * <span class="number">2</span> + <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            bits[bit * <span class="number">2</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ret = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; bits.Length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!bits[i])</span><br><span class="line">        &#123;</span><br><span class="line">            ret.Add(i / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1280,7 +1287,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">191</span>
+          <span class="site-state-item-count">192</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1323,7 +1330,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

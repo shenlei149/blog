@@ -202,6 +202,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-491%E9%A2%98-%E8%83%BD%E6%95%B4%E9%99%A411%E7%9A%84double-pandigital-number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-491%E9%A2%98-%E8%83%BD%E6%95%B4%E9%99%A411%E7%9A%84double-pandigital-number/" class="post-title-link" itemprop="url">欧拉项目 | 491题 | 能整除11的double pandigital number</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-12-08 21:03:29" itemprop="dateCreated datePublished" datetime="2017-12-08T21:03:29+08:00">2017-12-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-491%E9%A2%98-%E8%83%BD%E6%95%B4%E9%99%A411%E7%9A%84double-pandigital-number/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-491题-能整除11的double-pandigital-number/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=491" title="Problem 491 - Project Euler">491题链接</a></p>
+<p>一个数，使用两次0-9这十个数字，被称为double pandigital number，那么有多少个这能被11整除的double pandigital number呢？</p>
+<p>首先我们要明白，遍历所有的double pandigital number，然后再看看是否能整除11这种直接的暴力算法肯定是不行的，因为double pandigital number数太多了，大约是20!/(2^10)*0.9。<br>那怎么办呢？先考虑能被11整除的数的性质，奇位数的数字之和减去偶位数的数字之和，能被11整除。<br>所以，我们不需要精确的知道数字是多少，只要通过排列组合知识，把满足题意的数字的个数计算出来就好。</p>
+<p>从20个里面选择10个数字作为奇位数上的数字，C(20, 10) = 184756，这个量级做循环操作还是能搞定的。<br>选出了奇位数的数字，很容易就能得到偶位数的数字。<br>有了这些数字我们就能通过排列组合的知识来计算个数了。<br>如果没有数字重复，结果是10!，每出现一个数字重复，就除以2（重复数字交换，还是同一个数字）。<br>这里忽略了两个问题。<br>一个是0开头的没有被排除，不管怎么折腾，总会有0在第一位，所以把总结果乘以0.9就好了。<br>第二个问题是，选择出来的奇位数可能重复，因为我们传入的参数有两个0，两个1，等等，对于组合算法来说，选择第一个0和选择第二个0是两种不同的组合，但是对于我们组成数字来说，没有区别，所以我们还需要一个集合，记住那些被计算过了的被选择出来的奇位数。  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">long</span> <span class="title">GetAnswer</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">long</span> ret = <span class="number">0</span>;</span><br><span class="line">    HashSet&lt;<span class="built_in">string</span>&gt; combinations = <span class="keyword">new</span> HashSet&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">    <span class="keyword">var</span> allDigits = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt; &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9</span> &#125;;</span><br><span class="line">    <span class="keyword">var</span> odds = Utils.Combination(allDigits, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> odd <span class="keyword">in</span> odds)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> sum = odd.Sum();</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">23</span> || sum == <span class="number">34</span> || sum == <span class="number">45</span> || sum == <span class="number">56</span> || sum == <span class="number">67</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> com = <span class="built_in">string</span>.Join(<span class="string">&quot;_&quot;</span>, odd);</span><br><span class="line">            <span class="keyword">if</span> (!combinations.Contains(com))</span><br><span class="line">            &#123;</span><br><span class="line">                combinations.Add(com);</span><br><span class="line">                <span class="keyword">var</span> even = GetRemainNumbers(odd);</span><br><span class="line">                ret += GetPCount(even) * GetPCount(odd);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret * <span class="number">9</span> / <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">long</span> <span class="title">GetPCount</span>(<span class="params">IEnumerable&lt;<span class="built_in">int</span>&gt; source</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">long</span> ret = Factorial10;</span><br><span class="line">    <span class="built_in">int</span> n = <span class="number">10</span> - source.Distinct().Count();</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ret /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> IEnumerable&lt;<span class="built_in">int</span>&gt; <span class="title">GetRemainNumbers</span>(<span class="params">IEnumerable&lt;<span class="built_in">int</span>&gt; subtracter</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> bits = <span class="keyword">new</span> <span class="built_in">bool</span>[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> bit <span class="keyword">in</span> subtracter)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (bits[bit * <span class="number">2</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            bits[bit * <span class="number">2</span> + <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            bits[bit * <span class="number">2</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ret = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; bits.Length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!bits[i])</span><br><span class="line">        &#123;</span><br><span class="line">            ret.Add(i / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-77%E9%A2%98-%E5%88%86%E8%A7%A3%E6%88%90%E8%B4%A8%E6%95%B0%E4%B9%8B%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1016,93 +1108,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E9%98%85%E8%AF%BB/2017-Q2-%E4%B8%83%E6%9C%88-%E9%98%85%E8%AF%BB%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%98%85%E8%AF%BB/2017-Q2-%E4%B8%83%E6%9C%88-%E9%98%85%E8%AF%BB%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">2017 Q2 + 七月 阅读计划总结</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-08-12 16:48:38" itemprop="dateCreated datePublished" datetime="2017-08-12T16:48:38+08:00">2017-08-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E9%98%85%E8%AF%BB/2017-Q2-%E4%B8%83%E6%9C%88-%E9%98%85%E8%AF%BB%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="阅读/2017-Q2-七月-阅读计划总结/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>又过去好久了，总结下过去几个月完成了什么，计划完成什么，有哪些变化。</p>
-<p>先来说说阅读。论美国的民主暂停了，阅读是为了获取技能，增长阅历，和大师对话，现阶段，我貌似对这类书籍还是兴趣不大，从中得不到特别多的东西，与其为了读书而读书，不如先暂停，等我哪天对这个主题真的感兴趣了，再接着看。物理学基础公开课2也观看了十几集了，收获挺大，今年应该能如期完成。不读论美国的民主了，本来看了一章《必然》，想看看这本书，不过某人推荐《男人来自金星，女人来自火星》，那就先插入一本吧，看完这个再看必然好了。<br>计划：男人女人，物理学基础公开课2，可汗宏观。</p>
-<p>计算机方面。又看了几个小节的SICP，偶然发现了MIT关于这本书的主页，还有很多配套的东西，想回头从开始，配合这些新的资源，从新开始，不过，这样子让人感觉很不舒服，走回头路，不如回头去看CLRS吧。毕业时想着读完三本书，CLRS，SICP和龙书（可能要先看点其他这个方面的书），这个想法还是要继续坚持哈。CLRS做了部分习题，略过了多数证明，已经看到了BST。啥时候觉得CLRS搞久了需要换换脑子，再回SICP。<br>计划：CLRS，SICP</p>
-<p>数学方面，18.02搞定，但是感觉掌握程度不如18.01，开始了18.06之旅，从萌萌哒的教授变成了沉稳老练的教授。估计学完之后不到年底，那就把前面三门课的配套课本看一看。<br>计划：18.06</p>
-<p>英语方面。单词有天天背，NEC2已经学完，NEC3也在进行中。NEC2 homework也做到了61课，今年做完所有习题问题不大。GlobalEnglish进行到了第五单元。<br>计划：NEC2 homework完成第三单元，NEC3学完40课，GlobalEnglish应该能搞定unit 5，如果账号不过期的话。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1175,7 +1180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">191</span>
+          <span class="site-state-item-count">192</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1218,7 +1223,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
