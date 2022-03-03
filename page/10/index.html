@@ -202,6 +202,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-347%E9%A2%98-%E8%83%BD%E8%A2%AB%E4%B8%A4%E4%B8%AA%E8%B4%A8%E6%95%B0%E6%95%B4%E9%99%A4%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-347%E9%A2%98-%E8%83%BD%E8%A2%AB%E4%B8%A4%E4%B8%AA%E8%B4%A8%E6%95%B0%E6%95%B4%E9%99%A4%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/" class="post-title-link" itemprop="url">欧拉项目 | 347题 | 能被两个质数整除的最大整数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-08-28 10:25:05" itemprop="dateCreated datePublished" datetime="2015-08-28T10:25:05+08:00">2015-08-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-347%E9%A2%98-%E8%83%BD%E8%A2%AB%E4%B8%A4%E4%B8%AA%E8%B4%A8%E6%95%B0%E6%95%B4%E9%99%A4%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-347题-能被两个质数整除的最大整数/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=347" title="Problem 347 - Project Euler">原题链接</a></p>
+<p>在所有小于100的整数中，能被两个质数整除的最大整数是96，96 = 2^5 * 3。我们定义函数M(p,q,N)：对于不同的两个质数p和q，M(p,q,N)是小于等于N中能被p和q整除的最大整数，如果不存在，M(p,q,N)=0<br>比如<br>M(2,3,100)=96<br>M(3,5,100)=75，而不是90，因为90能被2，3，5整除。<br>M(2,73,100)=0，因为2*73=146，小于100的数里面没有数能同时被2和73整除。</p>
+<p>S(N)是对所有不同的M(p,q,N)求和。<br>题目最后要求是求S(10 000 000)。</p>
+<p>解题思路很清晰，只是要尽可能早的排除不可能的质数组合。<br>首先获取0到5 000 000之间的质数，因为大于5 000 000的质数乘以最小的质数2也会大于10 000 000，M是0，不用考虑了。<br>然后就是组合每一个可能的指数对p和q，获得M(p,q,10 000 000)。<br>两层循环遍历p和q。<br>不妨设p比较小，用遍历所有的质数吗？显然不用，当p大于10 000 000的平方时，p和q的乘积就会大于10 000 000，M是0。<br>q也不用遍历所有大于p的质数，一旦p和q的乘积大于10 000 000，就可以停止了。<br>有了p，q，得到对应的M，然后放到一个List里面。<br>循环遍历完之后就可以把List里面的值求和。</p>
+<p>给定p和q，如何得到M呢？<br>我用了暴力法，就是先通过Log(p, 10 000 000)和Log(q, 10 000 000)计算出可能的最大指数，然后两层循环，遍历所有可能的情况，得到小于等于M且能被2个质数整除的最大值。</p>
+<p>在我的机器上，大约2s多一点就能得到结果了。<br>最后，贴一下我的代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> MAX = <span class="number">10000000</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">long</span> <span class="title">GetAnswer</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">var</span> Ms = <span class="keyword">new</span> List&lt;<span class="built_in">long</span>&gt;();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> primes = Utils.GenPrimes(MAX / <span class="number">2</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; primes[i] &lt; Math.Sqrt(MAX); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">int</span> j = i + <span class="number">1</span>; j &lt; primes.Length; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">long</span> p = primes[i];</span><br><span class="line">			<span class="built_in">long</span> q = primes[j];</span><br><span class="line">			<span class="keyword">if</span> (p * q &lt; MAX)</span><br><span class="line">			&#123;</span><br><span class="line">				Ms.Add(GetM(p, q));</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> Ms.Sum();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">long</span> <span class="title">GetM</span>(<span class="params"><span class="built_in">long</span> p, <span class="built_in">long</span> q</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">var</span> max = <span class="number">0L</span>;</span><br><span class="line">	<span class="keyword">var</span> e1Max = (<span class="built_in">int</span>)(Math.Log(MAX) / Math.Log(p));</span><br><span class="line">	<span class="keyword">var</span> e2Max = (<span class="built_in">int</span>)(Math.Log(MAX) / Math.Log(q));</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">int</span> e1 = <span class="number">0</span>; e1 &lt; e1Max; e1++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">int</span> e2 = <span class="number">0</span>; e2 &lt; e2Max; e2++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">var</span> product = Math.Pow(p, e1 + <span class="number">1</span>) * Math.Pow(q, e2 + <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span> (product &lt;= MAX &amp;&amp; product &gt; max)</span><br><span class="line">			&#123;</span><br><span class="line">				max = (<span class="built_in">long</span>)product;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1149,109 +1243,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C%E8%AF%AD%E8%A8%80%EF%BC%9A%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C%E8%AF%AD%E8%A8%80%EF%BC%9A%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="post-title-link" itemprop="url">C语言：预处理器</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-06-29 15:24:36" itemprop="dateCreated datePublished" datetime="2015-06-29T15:24:36+08:00">2015-06-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C%E8%AF%AD%E8%A8%80%EF%BC%9A%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/计算机基础/C语言：预处理器/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>将C语言源代码，处理成可执行的文件，大致需要三步，预处理、编译和链接。下面主要讲讲预处理器的作用，回头有时间再写一篇关于编译和链接的文章。</p>
-<p>预处理器的作用是根据一定的规则，进行<strong>纯文本的替换</strong>，递归的执行，直到没有可替换的内容结束。使用gcc -E可以仅做预处理。</p>
-<p>C语言中，大致有以下几种做法：<br>第一种，定义一个常量。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WIDTH 480</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HEIGHT 720</span></span><br></pre></td></tr></table></figure>
-<p>上述就定义了两个常量，宽和高。我相信，没人想在源代码的很多地方写上480和720这两个数字。使用宏定义可以给这两个数字起一个有意义的名字，代码中使用有意义的名字来提升代码的可读性。预处理器会把代码中的WIDTH和HEIGHT全部替换成480和720。</p>
-<p>第二种，定义函数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(a,b) (((a)&gt;(b))?(a):(b))</span></span><br></pre></td></tr></table></figure>
-<p>上述就定义了一个返回最大值的函数。<br>为啥要套这么多括号，因为a和b可以是复杂的运算而不是简单的两个数，不写括号，可能会由于运算优先级被改变而导致出现非程序员期望的结果。<br>宏定义函数的优点是比普通的函数快，宏展开之后，不会有真正的函数调用。而普通调用需要保存上下文，传参，返回等等，浪费些许时间。<br>但是缺点很多：缺少必要的检查；<br>写不好会导致效率低下，比如int max = MAX(fib(a),fib(b))，展开后会调用三次fib函数；<br>多次或者不正确的副作用，比如int max = MAX(m++,n++)，展开后，m和n回调用不同次++。<br>assert就是一个经典的宏定义函数，大致如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> NDEBUG</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> assert(cond) (void)0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> assert(cond) \</span></span><br><span class="line"><span class="meta">        ((cond)?(void)0:\</span></span><br><span class="line"><span class="meta">            fprint(xxxx), exit(0))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<p>对于宏函数，我个人觉得弊大于利，所以还是应该谨慎使用。<br>联系到C语言被创造的时间，上个世纪六七十年代，信条是程序员知道他做得事情，让他去做，甚至包括硬件。所以C语言设计的是基于硬件层的抽象，都能直接的映射到硬件操作。但是时至今日，操作系统，软件，硬件都变得日益复杂，程序员这个行业也越来越庞大，codebase也以数量级的方式增长，不能指望每个程序员都能明白他们在做的事情。所以，现代语言都从语言层面来限制程序员，最大效率的生产出软件，而软件本身的效率只是诸多关注点的一个罢了。</p>
-<p>第三种，包含头文件。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;assert.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;yourheaderfile.h&quot;</span></span></span><br></pre></td></tr></table></figure>
-<p>预处理器会查找对应文件并作替换，本来很小的文件会变的很大。<br>如果出现了循环依赖，那么预处理器就会一直递归的处理下去，无穷无尽。<br>如何解决这个问题呢？在需要的地方使用宏定义。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> XXX_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> XXX_H</span></span><br><span class="line"><span class="comment">// code</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<p>智能的现代预处理器应该会自己处理这种问题，即使你没写上述的代码。但是，写上述的东西很容易，而且就算没有循环依赖也没有什么副作用，所以最佳实践是，头文件都写上上述三行代码。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1324,7 +1315,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">192</span>
+          <span class="site-state-item-count">193</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

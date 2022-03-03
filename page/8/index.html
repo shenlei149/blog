@@ -202,6 +202,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%90%97%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%90%97%EF%BC%9F/" class="post-title-link" itemprop="url">二叉树是平衡的吗？</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-14 10:07:05" itemprop="dateCreated datePublished" datetime="2016-03-14T10:07:05+08:00">2016-03-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%90%97%EF%BC%9F/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/二叉树是平衡的吗？/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>给定一个二叉树，判断其是否平衡。平衡的定义是，从任何一个节点去考虑，它的左子树和右子数的高度差不超过1。</p>
+<p>很明显，需要一个递归函数来做这个事情。<br>如果这个函数返回树高度，判断是否平衡，再去递归调用这个函数去判断左右子树是否平衡，这显然是一个解，但是略微暴力了一点。因为递归左右子树时，又要计算其左右子树的高度，而之前以前计算过了，很明显的有着重复的部分。<br>给定了根节点，想直接自底向上计算，也不是一件容易的事情。</p>
+<p>我们稍稍改造一下返回高度的函数，如果其左右子树平衡，才返回高度，否则返回-1，这样子，程序的递归性就自然而然的帮我们自底向上进行判断每个节点处是否平衡了。</p>
+<p>下面的代码定义了一个树节点的数据结构，CheckHeight函数就是上面说的函数了，最后，计算平衡就是把根节点传入，检查返回值是否等于-1。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">TreeNode</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode Left &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> TreeNode Right &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">CheckHeight</span>(<span class="params">TreeNode node</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// Empty</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> leftHeight = CheckHeight(node.Left);</span><br><span class="line">    <span class="keyword">if</span> (leftHeight == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Not balanced</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> rightHeight = CheckHeight(node.Right);</span><br><span class="line">    <span class="keyword">if</span> (rightHeight == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Not balanced</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Check if current node is balanced. */</span></span><br><span class="line">    <span class="built_in">int</span> diff = Math.Abs(leftHeight - rightHeight);</span><br><span class="line">    <span class="keyword">if</span> (diff &amp;gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Not balanced</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.Max(leftHeight, rightHeight) + <span class="number">1</span>; <span class="comment">// Return height</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">bool</span> <span class="title">IsBalance</span>(<span class="params">TreeNode root</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> CheckHeight(root) != <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>算法的时间复杂度是O(N)，只需要遍历每个节点一次。<br>空间复杂度是O(H)，H是树的高度，就是在递归过程中，最深就是H层罢了，每层需要常量空间去保存节点相关的信息。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1090,104 +1184,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/%E8%87%AA%E6%8E%A7%E5%8A%9B7%EF%BC%9A%E5%87%BA%E5%94%AE%E6%9C%AA%E6%9D%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/%E8%87%AA%E6%8E%A7%E5%8A%9B7%EF%BC%9A%E5%87%BA%E5%94%AE%E6%9C%AA%E6%9D%A5/" class="post-title-link" itemprop="url">自控力7：出售未来</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-12-03 13:53:41" itemprop="dateCreated datePublished" datetime="2015-12-03T13:53:41+08:00">2015-12-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/" itemprop="url" rel="index">
-                    <span itemprop="name">摘抄&心得</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/%E8%87%AA%E6%8E%A7%E5%8A%9B7%EF%BC%9A%E5%87%BA%E5%94%AE%E6%9C%AA%E6%9D%A5/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="阅读/摘抄-心得/自控力7：出售未来/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>延迟折扣，等待奖励的时间越长，奖励对你来说价值越低。</p>
-<p>被奖励蒙蔽双眼。<br>有限理性：在变得不理性之前，我们都是理性的。在理想状态下，我们非常理性。但当诱惑真实存在的时候，我们的大脑就进入了“搜寻奖励”模式，确保我们不会错过任何奖励。<br>我们在权衡即时奖励和未来奖励的时候，大脑处理选项的方式相当不一样。即时奖励会激活更古老更原始的奖励系统，刺激相应的多巴胺产生欲望。未来奖励则不太能激活这个奖励系统。<br>看不到直接奖励会让奖励变得抽象起来，对奖励系统的刺激作用也会减少。</p>
-<p>给未来的回报打折时人类的天性，但每个人打的折扣不同。</p>
-<p>预见未来的自己<br>读完这本书不会奇迹般的成为未来的自己。懂得理论是不够的。<br>我们确实可以相信，未来的自己能做好所有的事。但更典型的情况是，当我们到了未来，理想中的未来的自己却不见了，最后做决定的还是毫无改变的曾经的自己。</p>
-<p>未来的自己其实是个陌生人。和陌生人的幸福比起来，我们都会更关心自己的幸福。这是人类的天性。那么，我们会把现在自己的需求置于未来自己的幸福之上，这是合乎逻辑的。为什么要牺牲掉自己的幸福，给陌生人的投资呢？<br>我们要深刻的认识到：未来自我的连续性。<br>想想一年后英语好起来，回到外企，transfer到美国，想想就好激动呢，让人感到兴奋，更有动力去完成自己的意志力挑战。要知道，想象未来的自己能增强现在的意志力。</p>
-<p>该等待的时候，该屈服的时候<br>书中的一个例子，一定要在什么时候喝一瓶香槟，让我想到了The big bang theory里面的教授，好可怜。<br>不能太高瞻远瞩，也不能太鼠目寸光，度。<br>我们要尽可能的平衡两者，不能太目光短浅，不考虑长远利益，也不能忘记当下的快乐。</p>
-<p>当我们思考未来时，我们能预测到未来的自己和想象中的有什么不同。未来的奖励似乎并不那么有诱惑力，所以我们选择了即时的满足感。我们无法预测自己会怎么受到诱惑、怎么被分散注意力，所以我们无法坚定自己的目标。如果我们想作出更明智的决定，就要更好地理解和支持未来的自己。我们还需要记住，为现在的行为承担后果的，看似是未来的自己，实际上还是我们自己。<br>未来的自己会对我们现在的付出感激不尽。</p>
-<p>意志力实验：等待10分钟<br>对你想要的东西来说，10分或许不太长。但是神经学家发现，10分钟能在很大程度上改变大脑处理奖励的方式。这10分钟就会让大脑把即使奖励当作是未来奖励。<br>想要获得一个冷静明智的大脑，我们就需要在所有诱惑面前安排10分钟的等待时间。<br>如果你的意志力挑战需要“我想要”的力量，你仍旧可以使用这个10分钟法则来克服诱惑和拖延。<br>另一个方向看这个法则，坚持做10分钟，然后就可以放弃了。当10分钟结束后，你就可以允许自己停下来，不过只要一开始，你就会想继续做下去。<br>对于商家的诱惑，冷静10分钟很有效，有时候在店里看到那么好的东西，加上商家的诱导，很想买，但是出来转一下，往往会发现自己也没有那么想要。</p>
-<p>意志力实验：降低你的折扣率<br>大部分人都想避免失败。我们确实不想失去已经得到的东西。比起得到50美元的快乐，失去50美元的不快对我们影响更大。<br>以下方式可以抵抗即时的满足感：<br>当你收到诱惑做与长期利益相悖的事时，想象一下，这个选择就意味着你为了即时的满足感放弃了更好的长期奖励。<br>想象你已经得到了长期奖励，想象未来的你正在享受自控的成果。<br>然后扪心自问，你愿意放弃它，换取你正在诱惑你的短暂快感吗？<br>理财的体验金，可以很快兑换现金，3万体验金等于10元，也可以换成50块优惠券投资的时候用掉，不过要等一个月。我选择了后者。这和示例并不完全等价，后者多了投资的风险，但是如果你就是要投资的话，两者就一样的。看样子我还是能抵御短期诱惑的，其实仔细想想，一个50，一个10元，就是时间不太一样，在不急着用钱且有闲钱理财的情况下，没有理由选择10元啊。</p>
-<p>深入剖析：你在等待未来的自己吗？<br>你是否在推迟重要的变化或任务，等待自控力更强的未来的自己出现？<br>想象并描绘未来的自己，很美好。但是如果不从现在开始改变，那个未来的自己是不会出现的。别指望那个更强的自己了，还是脚踏实地的指望现在这个自己吧。<br>你是不是乐观地让自己承担过多的责任，最后却被不可能的任务打倒了？<br>有时候会的，给自己很多任务，却完不成或者草草结束，虎头蛇尾。结合之前的理论，先从小事做起，增加自信，一点点改变自己。<br>你今天有没有不去做什么事，因为明天你会更想去做那件事？<br>有啊，但是实际上不会的，明天的你和今天的你没啥区别，那么为什么会更想去做一件今天不想做的事情呢。<br>想要遇见未来的自己，改变，从现在开始，并坚持不懈。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1260,7 +1256,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">192</span>
+          <span class="site-state-item-count">193</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

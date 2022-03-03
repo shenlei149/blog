@@ -202,6 +202,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-323%E9%A2%98-%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-323%E9%A2%98-%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/" class="post-title-link" itemprop="url">欧拉项目 323题 | 概率分布</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-10-16 14:50:10" itemprop="dateCreated datePublished" datetime="2016-10-16T14:50:10+08:00">2016-10-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-323%E9%A2%98-%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-323题-概率分布/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=323">题目链接</a></p>
+<p>这道题乍一看是位运算，其实是一道和概率分布相关的题目。</p>
+<p>有y0 y1 y2一系列32bits的无符号数<br>x初始为0，然后和这一系列数异或操作，操作了N次，直到x是2^32-1，其实就是x所有bits都是1。<br>求N的期望值。</p>
+<p>期望怎么计算呢？<br>计算对于每一个n对应的概率p(n)，然后加权求和。<br>我们现在逐一分析一下<br>N为1，那么说明y0每一个bits都是1，概率是1/(2^32)<br>N为2，针对每个bit进行计算，第一个bit，结果是1的概率是1减去不是1的概率，不是1的概率就是y0的第一bit不是0，y1的第一bit也不是0，概率是1/(2^2)，那么p(2)=(1-1/(2^2))^32 - p(1)<br>N为3，p(3)=(1-1/(2^3))^32 - p(1) - p(2)<br>以此类推<br>题目要求小数点后十位，如果p(n)很小，乘以n对结果都没有影响了，也就是p(n)*n小于10的十次方。</p>
+<p>我计算的时候搞了一个数据结构保存概率的分子和分母。我解答出来之后，看了下别人的分析，感觉直接使用double 来保存概率也能给出正确答案，我没有试，不确定。<br>下面是我的代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Probability</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> BigInteger Numerator &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> BigInteger Denominator &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Probability</span>(<span class="params">BigInteger numerator, BigInteger denominator</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Numerator = numerator;</span><br><span class="line">        Denominator = denominator;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">GetAnswer</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    List&lt;Probability&gt; probabilities = <span class="keyword">new</span> List&lt;Probability&gt;();</span><br><span class="line">    probabilities.Add(<span class="keyword">new</span> Probability(<span class="number">0</span>, <span class="number">1</span>));</span><br><span class="line">    BigInteger twoPow32 = BigInteger.Pow(<span class="number">2</span>, <span class="number">32</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        BigInteger baseDenominator = BigInteger.Pow(<span class="number">2</span>, i);</span><br><span class="line">        BigInteger baseNumerator = baseDenominator - <span class="number">1</span>;</span><br><span class="line">        BigInteger lastBaseDenominator = BigInteger.Pow(<span class="number">2</span>, i - <span class="number">1</span>);</span><br><span class="line">        BigInteger lastBaseNumerator = lastBaseDenominator - <span class="number">1</span>;</span><br><span class="line">        BigInteger denominator = BigInteger.Pow(baseDenominator, <span class="number">32</span>);</span><br><span class="line">        BigInteger numerator = BigInteger.Pow(baseNumerator, <span class="number">32</span>);</span><br><span class="line">        BigInteger lastNumerator = BigInteger.Pow(lastBaseNumerator, <span class="number">32</span>);</span><br><span class="line">        probabilities.Add(<span class="keyword">new</span> Probability(</span><br><span class="line">            numerator - lastNumerator * twoPow32,</span><br><span class="line">            denominator));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (probabilities[i].Denominator / probabilities[i].Numerator / i &gt; BigInteger.Pow(<span class="number">10</span>, <span class="number">12</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    BigInteger ansDenominator = probabilities.Last().Denominator;</span><br><span class="line">    BigInteger ansNumerator = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; probabilities.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Probability current = probabilities[i];</span><br><span class="line">        BigInteger times = ansDenominator / current.Denominator;</span><br><span class="line">        ansNumerator += times * current.Numerator * i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    BigInteger times11 = ansNumerator * <span class="number">100000000000</span> / ansDenominator;</span><br><span class="line">    <span class="built_in">double</span> answer = (<span class="built_in">double</span>)times11 / <span class="number">100000000000</span>;</span><br><span class="line">    <span class="keyword">return</span> answer.ToString(<span class="string">&quot;N10&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%9D%82/%E5%9D%9A%E6%8C%81%E6%9B%B4%E6%96%B0%E4%B8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1037,100 +1130,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%90%97%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%90%97%EF%BC%9F/" class="post-title-link" itemprop="url">二叉树是平衡的吗？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-03-14 10:07:05" itemprop="dateCreated datePublished" datetime="2016-03-14T10:07:05+08:00">2016-03-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%90%97%EF%BC%9F/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/二叉树是平衡的吗？/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>给定一个二叉树，判断其是否平衡。平衡的定义是，从任何一个节点去考虑，它的左子树和右子数的高度差不超过1。</p>
-<p>很明显，需要一个递归函数来做这个事情。<br>如果这个函数返回树高度，判断是否平衡，再去递归调用这个函数去判断左右子树是否平衡，这显然是一个解，但是略微暴力了一点。因为递归左右子树时，又要计算其左右子树的高度，而之前以前计算过了，很明显的有着重复的部分。<br>给定了根节点，想直接自底向上计算，也不是一件容易的事情。</p>
-<p>我们稍稍改造一下返回高度的函数，如果其左右子树平衡，才返回高度，否则返回-1，这样子，程序的递归性就自然而然的帮我们自底向上进行判断每个节点处是否平衡了。</p>
-<p>下面的代码定义了一个树节点的数据结构，CheckHeight函数就是上面说的函数了，最后，计算平衡就是把根节点传入，检查返回值是否等于-1。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">TreeNode</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode Left &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> TreeNode Right &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">CheckHeight</span>(<span class="params">TreeNode node</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// Empty</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> leftHeight = CheckHeight(node.Left);</span><br><span class="line">    <span class="keyword">if</span> (leftHeight == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Not balanced</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> rightHeight = CheckHeight(node.Right);</span><br><span class="line">    <span class="keyword">if</span> (rightHeight == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Not balanced</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Check if current node is balanced. */</span></span><br><span class="line">    <span class="built_in">int</span> diff = Math.Abs(leftHeight - rightHeight);</span><br><span class="line">    <span class="keyword">if</span> (diff &amp;gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// Not balanced</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.Max(leftHeight, rightHeight) + <span class="number">1</span>; <span class="comment">// Return height</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">bool</span> <span class="title">IsBalance</span>(<span class="params">TreeNode root</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> CheckHeight(root) != <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>算法的时间复杂度是O(N)，只需要遍历每个节点一次。<br>空间复杂度是O(H)，H是树的高度，就是在递归过程中，最深就是H层罢了，每层需要常量空间去保存节点相关的信息。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1203,7 +1202,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">192</span>
+          <span class="site-state-item-count">193</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
