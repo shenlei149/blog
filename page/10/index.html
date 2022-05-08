@@ -202,6 +202,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E5%AE%9E%E7%8E%B0map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E5%AE%9E%E7%8E%B0map/" class="post-title-link" itemprop="url">Scheme: 实现map</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-09-06 11:12:54" itemprop="dateCreated datePublished" datetime="2015-09-06T11:12:54+08:00">2015-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">函数式编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E5%AE%9E%E7%8E%B0map/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/函数式编程/Scheme-实现map/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>map操作本身就不多介绍了，直奔主题。</p>
+<p>首先，我们实现一个一元的map，也就是说，传给map的函数只接受一个参数。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">unary-map</span> fn seq)</span><br><span class="line">  (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">null?</span></span> seq) &#x27;()</span><br><span class="line">      (<span class="name"><span class="builtin-name">cons</span></span> (<span class="name">fn</span> (<span class="name"><span class="builtin-name">car</span></span> seq))</span><br><span class="line">            (<span class="name">unary-map</span> fn (<span class="name"><span class="builtin-name">cdr</span></span> seq)))))</span><br></pre></td></tr></table></figure>
+<p>很简单，就是一个简单的递归即可，就不详细的说了。我们举一个例子：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; (<span class="name">unary-map</span> (<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">+</span></span> x <span class="number">1</span>)) &#x27;(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>))</span><br><span class="line">&#x27;(<span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在继续讲解之前，我们需要知道一些其他知识。Scheme内置的map可以处理任意多的参数，显然，我们需要知道如何定义任意参数的函数。<br>Scheme使用.来表示把后面的参数打包起来。<br>举个简单的例子说明（需要强调下，小点和字母d之间有一个空格）：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">bar</span> a b c . d)</span><br><span class="line">  (<span class="name"><span class="builtin-name">list</span></span> a b c d))</span><br><span class="line"></span><br><span class="line">&gt; (<span class="name">bar</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>)</span><br><span class="line">&#x27;(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="number">4</span> <span class="number">5</span> <span class="number">6</span>))</span><br><span class="line">&gt; (<span class="name">bar</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line">&#x27;(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ())</span><br></pre></td></tr></table></figure>
+
+<p>下面考虑实现自己的map函数了。<br>思路其实也很简单，把每一个list里面的第一个元素拿出来传入fn让其运算，然后呢，把每一个list里面的第一个元素删除，得到一系列的list，然后递归调用。<br>说起来容易，如何设计参数呢？<br>第一个参数是一个list，第二个参数是.，也就是可变参数，把后面的所有list打包传进来。<br>拿第一个list的第一个元素简单，如何把后面每个list的第一个元素取出呢？利用先开始写的一元map，(unary-map car other-list)，就得到其余list的第一个元素，和第一个list的第一个元素连接起来，传给fn去做计算。<br>后续的移除第一个元素之后递归也是类似的。<br>最后把结果连接成一个list。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-map</span> fn first-list . other-list)</span><br><span class="line">  (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">null?</span></span> first-list) &#x27;()</span><br><span class="line">      (<span class="name"><span class="builtin-name">cons</span></span> (<span class="name"><span class="builtin-name">apply</span></span> fn</span><br><span class="line">                   (<span class="name"><span class="builtin-name">cons</span></span> (<span class="name"><span class="builtin-name">car</span></span> first-list)</span><br><span class="line">                         (<span class="name">unary-map</span> car other-list)))</span><br><span class="line">            (<span class="name"><span class="builtin-name">apply</span></span> my-map</span><br><span class="line">                   (<span class="name"><span class="builtin-name">cons</span></span> fn</span><br><span class="line">                         (<span class="name"><span class="builtin-name">cons</span></span> (<span class="name"><span class="builtin-name">cdr</span></span> first-list)</span><br><span class="line">                               (<span class="name">unary-map</span> cdr other-list)))))))</span><br></pre></td></tr></table></figure>
+
+<p>简单的写两个case测试一下：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; (<span class="name">my-map</span> + &#x27;(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>) &#x27;(<span class="number">4</span> <span class="number">5</span> <span class="number">6</span>) &#x27;(<span class="number">7</span> <span class="number">8</span> <span class="number">9</span>))</span><br><span class="line">&#x27;(<span class="number">12</span> <span class="number">15</span> <span class="number">18</span>)</span><br><span class="line"></span><br><span class="line">&gt; (<span class="name">my-map</span> (<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">+</span></span> x <span class="number">1</span>)) &#x27;(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>))</span><br><span class="line">&#x27;(<span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-347%E9%A2%98-%E8%83%BD%E8%A2%AB%E4%B8%A4%E4%B8%AA%E8%B4%A8%E6%95%B0%E6%95%B4%E9%99%A4%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1145,104 +1246,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C%E8%AF%AD%E8%A8%80%EF%BC%9A%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8C%E9%93%BE%E6%8E%A5%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C%E8%AF%AD%E8%A8%80%EF%BC%9A%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8C%E9%93%BE%E6%8E%A5%E5%99%A8/" class="post-title-link" itemprop="url">C语言：编译器和链接器</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-07-07 15:36:09" itemprop="dateCreated datePublished" datetime="2015-07-07T15:36:09+08:00">2015-07-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C%E8%AF%AD%E8%A8%80%EF%BC%9A%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8C%E9%93%BE%E6%8E%A5%E5%99%A8/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/计算机基础/C语言：编译器和链接器/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>预处理器把C语言源代码处理完之后，编译器会处理成对象文件（比如.o文件），链接器会找到相关文件，链接组成一个二进制文件。下面看一个例子：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;assert.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">void</span> *mem = <span class="built_in">malloc</span>(<span class="number">400</span>);</span><br><span class="line">    <span class="built_in">assert</span>(mem != <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;HAHA\n&quot;</span>);</span><br><span class="line">    <span class="built_in">free</span>(mem);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>生成的main.o文件大致如下：<br>CALL malloc<br>CALL printf<br>CALL free<br>RET<br>为啥没有assert呢？因为assert是宏，预处理器处理完就没有了。</p>
-<p>链接器把main.o和对应库文件链接生成main.out这个可执行文件。<br>运行这个文件，会打印HAHA。</p>
-<p>如果我们把include stdio注释掉：<br>预处理器处理完成的文件是没有printf的声明的，编译时发现语法都是正确的，gcc会推测printf是一个输入string，返回int的函数，随之产生一个warning，链接器根据编译器给出的结果载入对应的库文件，生成的可执行文件和正常的是一样的。</p>
-<p>如果我们把include stdlib注释掉：<br>编译器发现malloc free没有声明，推测其函数原型，产生warning，后续和上面情况类似，一切都正常。</p>
-<p>如果我们把include assert注释掉：<br>预处理不会做对应的宏展开，编译器发现assert，推测原型，.o文件中多了一行CALL assert，链接器在库里面找不到assert函数，报错。</p>
-<p>对于上面三种情况的一和二，自己写一个假的原型来欺骗编译器也可以，就去掉了warning。<br>其实，声明函数，定义一系列的参数列表，只要是为了能够在Stack上正确的记录上下文活动，而给编译器看是附带效果。<br>看下面的示例，程序是诡异的，但是能够正常输出的。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strlen</span><span class="params">(<span class="keyword">char</span>*, <span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">65</span>;</span><br><span class="line">    <span class="keyword">int</span> length = <span class="built_in">strlen</span>((<span class="keyword">char</span>*)&amp;num, num);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>给了strlen的原型，但是和库里面的不一致，使用gcc编译之后，程序能正常运行，输出多少呢？<br>编译器看到strlen需要两个参数，且返回int。链接器去找strlen定义，很开心，找到了，链接，生成文件。这里需要说明下，.o文件没有参数类型，链接器只看名字。<br>运行时，栈里面是什么情况呢？<br>栈最底下是n，然后分配length需要的空间，再push num和num地址进去，两个参数，SP=SP-8，保存PC上下文，调用strlen，strlen需要一个参数char*，去SP的地址去拿，幸好，SP指向地方还真是个指针，指向num。strlen把num开始的地址作为char*去处理，遇到第一个0结束。在小端机器上，num内存是65 0 0 0，遇到第一个0结束，所以它认为这个字符串长度为1。<br>所以，这个诡异的程序输出了1！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1315,7 +1318,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">194</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
