@@ -202,6 +202,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%A4%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%A4%BA/" class="post-title-link" itemprop="url">C++基本类型在内存中的表示</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-13 15:50:41" itemprop="dateCreated datePublished" datetime="2015-05-13T15:50:41+08:00">2015-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%A4%BA/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/计算机基础/C-基本类型在内存中的表示/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>C/C++不外乎以下几种基本类型：bool，char，short，int，long，float，double，还有不常用的long long。</p>
+<p>char占用一个字节，而short占用两个字节，在char转化为short时，全部复制到short占用内存的低八位里面。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ch = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">	<span class="keyword">short</span> s = ch;</span><br><span class="line">	std::cout &lt;&lt; s &lt;&lt; std::endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A对应的ASCII码是65，所以输出是65。</p>
+<p>反之，short转化为char时，把高位的一个字节直接扔掉，只复制低字节。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s = <span class="number">67</span>;</span><br><span class="line"><span class="keyword">char</span> ch = s;</span><br><span class="line">std::cout &lt;&lt; ch &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p>输出是一个大写的C。</p>
+<p>int一般占用4个字节，和short转化和上面char和short转化类似。下面看一个不太一样的例子。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span> &lt;&lt; <span class="number">15</span>;</span><br><span class="line"><span class="keyword">short</span> s = i;</span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p>i在内存中的表示是0000 0000，0000 0000，1000 0000，0000 0000<br>short占用两个字节，直接把低位两个字节复制过来，s在内存中的表示是1000 0000，0000 0000<br>第一位是符号位，表示负数，根据补码表示的意义，输出应该是负2的15次方，即-32768</p>
+<p>float也占用四个字节，但是每一位的含义不一样，第一位是符号位s，接着的八位是exp，接着23位是尾数，表示0.ddd<br>float的值等于(-1)^s * (1.ddd) * 2 ^ (exp - 127)<br>正常的int转float很简单，比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">float</span> f = i;</span><br><span class="line">std::cout &lt;&lt; f &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p>就是正常的输出5，只是i和f占用的内存对应的bit位上0/1差别很大</p>
+<p>来看个不正常的转化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = (<span class="number">1</span> &lt;&lt; <span class="number">22</span>) + (<span class="number">1</span> &lt;&lt; <span class="number">30</span>);</span><br><span class="line"><span class="keyword">float</span> f = * (<span class="keyword">float</span>*) &amp;i;</span><br><span class="line">std::cout &lt;&lt; f &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p>i在内存中的表示是0100 0000，0100 0000，0000 0000，0000 0000<br>f没有分配新的空间，而是使用了i的内存，以float的方式去读而已<br>符号位是0，表示正数<br>exp是1000 0000，也就是128<br>再后面是一个1，22个0，尾数就是1.1<br>所以f等于(-1)^0 * (1.1) * 2 ^ (128 - 127) = 1.5 * 2 = 3，即输出3<br>注意，上面等式第一步把二进制变成了十进制</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC493%E9%A2%98-%E5%BD%A9%E8%99%B9%E8%B0%9C%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1072,104 +1176,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/Life/%E8%BF%9F%E6%9D%A5%E7%9A%842014%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/Life/%E8%BF%9F%E6%9D%A5%E7%9A%842014%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">迟来的2014年终总结</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-01-05 17:06:30" itemprop="dateCreated datePublished" datetime="2015-01-05T17:06:30+08:00">2015-01-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Life/%E8%BF%9F%E6%9D%A5%E7%9A%842014%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Life/迟来的2014年终总结/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>已经2015年了。简单的总结一下去年吧，再展望一下今年。</p>
-<ol>
-<li><p>阅读<br>想好了一个月读一本书，但是没有做到。过去的一年就读了几本吧。<br>活出生命的意义，逃离德黑兰，天才引导的历程，图解HTTP，Pro JavaScript，敏捷模式开发，漫谈设计模式，程序员健康指南，很多期码农杂志，还有很多书都看了个开头，没有结束。。。<br>不过，Kindle是个好东西，晚上躺在床上，随意的看上几页，也不重，还不伤眼。但是好几本都看了个开头。。。<br>以后还是要静下心，一本一本来看，贪多嚼不烂。<br>希望2015年能够做到每个月读一本书。</p>
-</li>
-<li><p>手术<br>大事，最近的一次检查显示，一切都正常，慢慢的要加强体育锻炼，再然后就像主刀的主任说的一样，enjoy life</p>
-</li>
-<li><p>感情<br>和她的感情越来越好了。过年估计去她们家提亲吧。<br>预计今年去欧洲玩一圈，但是我要是真的拿到了小米offer，然后再去了小米，就五天年假，怎么可能有时间玩呢，一声叹息啊。</p>
-</li>
-<li><p>工作  </p>
-</li>
-<li><p>07-1014.06这个财年，居然拿了1分，从L59到了L60，工资涨了不少，算是过去一年辛勤的搞Office Portal的奖励吧。不过下半年就没有这么顺利了。两次re-org。第一次比较小，就是合并了Dev和Test。第二次比较大，嗯，开始做WAC了。三个一线Manager转了IC，其中一个是我老板，现已去了小米，另一个去了美国总部。最令人担忧的是，这次re-org引起了波动，很多人因此离职了。除了两个老板走了，还有三个原本就是Sr. Dev的，也走了，一个去了美国总部，两个去了小米。我擦，这么多人去小米，细思极恐啊。原本和我一个组的，一个也去了小米，一个要去美国总部。哎，人心惶惶啊。<br>未来的打算，先去小米面一下，拿到offer，看下待遇，一切都还不错的话，就跳槽。<br>拿不到Offer的话，就好好的接着在微软干，看下今年9月的结果然后再考虑发展吧。亦或者4月又re-org了呢哈哈。</p>
-</li>
-<li><p>学习<br>过去一年，女朋友说英语进步不少，但自我感觉没什么进步。如果不去小米，这玩意还待努力，即使去了，作为通用语言，也要学习才是。<br>其他方面，想看的太多，读的太少，好在元旦休息三天，思考了下，希望未来一年能静心研习。</p>
-</li>
-</ol>
-<p>加油！最后说句俗话，新的一年，新的开始！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1242,7 +1248,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">194</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

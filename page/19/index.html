@@ -202,6 +202,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%AE%97%E6%B3%95%E5%8F%8A%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%AE%97%E6%B3%95%E5%8F%8A%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">斐波那契数列算法及时间复杂度分析</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-01 11:19:37" itemprop="dateCreated datePublished" datetime="2013-03-01T11:19:37+08:00">2013-03-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%AE%97%E6%B3%95%E5%8F%8A%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/斐波那契数列算法及时间复杂度分析/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>斐波那契数列是一个很有意思的数列，应用领域非常广。<br>定义：<br>F(n+1)=F(n)+F(n-1)<br>有意思的是，F(n)/F(n+1)趋于黄金分割0.618。</p>
+<p>如何计算斐波那契数呢？<br>最朴素的思想，利用定义。<br>算法1代码如下：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">Fibonacci1</span>(<span class="params"><span class="built_in">int</span> n</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Fibonacci1(n - <span class="number">1</span>) + Fibonacci1(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析下算法复杂度：<br>T(n+1)=T(n)+T(n-1)=2*T(n-1)+T(n-2)=…=F(n)+F(n-1)=F(n+1)<br>由于直接递归调用，结果中的每一个1都来自最底层的F(1)和F(2)<br>那么为了求第n个数，就要调用F(n)次函数。<br>由于斐波那契数列是指数增长，所以该算法的时间复杂度也是指数增长，即O(2^n)</p>
+<p>仔细想下，从头开始往后算，也不过是线性复杂度，比算法1好太多了<br>于是得到算法2：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">Fibonacci2</span>(<span class="params"><span class="built_in">int</span> n</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>[] a = <span class="keyword">new</span> <span class="built_in">int</span>[n];</span><br><span class="line">    a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    a[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i] = a[i - <span class="number">1</span>] + a[i - <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> a[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度就是O(n)</p>
+<p>求斐波那契数列的算法还能再快一些吗？<br>答案是肯定的<br>算法3：<br>借助下面公式所示的结论：<br>$$<br>\left(\begin{matrix}<br>F_{n+1}\<br>F_n\<br>\end{matrix}\right)<br>=<br>\left(\begin{matrix}<br>1 &amp; 1\<br>1 &amp; 0\<br>\end{matrix}\right)<br>\left(\begin{matrix}<br>F_{n}\<br>F_{n-1}\<br>\end{matrix}\right)<br>\Rightarrow<br>\left(\begin{matrix}<br>F_{n+1} &amp; F_{n}\<br>F_n &amp; F_{n-1}\<br>\end{matrix}\right)<br>=<br>{\left(\begin{matrix}<br>1 &amp; 1\<br>1 &amp; 0\<br>\end{matrix}\right)}^n<br>$$<br>我们求一个矩阵的n次方即可<br>两个2维矩阵的乘法次数可以看作常量<br>矩阵额n次方利用分治法，只需要O(lg n)的复杂度就能计算出来<br>所以该算法的复杂度是O(lg n)，比算法2又快了很多，特别是数字非常大的时候<br>比如n从1亿变成4亿，算法2需要的时间要变成原来的四倍，但是算法3仅仅增加了个常数2(lg 4=2)<br>算法代码如下：  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">Fibonacci3</span>(<span class="params"><span class="built_in">int</span> n</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>[,] a = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">2</span>, <span class="number">2</span>] &#123; &#123; <span class="number">1</span>, <span class="number">1</span> &#125;, &#123; <span class="number">1</span>, <span class="number">0</span> &#125; &#125;;</span><br><span class="line">    <span class="built_in">int</span>[,] b = MatirxClub(a, n);</span><br><span class="line">    <span class="keyword">return</span> b[<span class="number">1</span>, <span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">int</span>[,] MatirxClub(<span class="built_in">int</span>[,] a, <span class="built_in">int</span> n)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123; <span class="keyword">return</span> a; &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">2</span>) &#123; <span class="keyword">return</span> Matirx(a, a); &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span>[,] temp = MatirxClub(a, n / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> Matirx(temp, temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span>[,] temp = MatirxClub(a, n / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> Matirx(Matirx(temp, temp), a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">int</span>[,] Matirx(<span class="built_in">int</span>[,] a, <span class="built_in">int</span>[,] b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>[,] c = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">2</span>, <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                c[i, j] += a[i, k] * b[k, j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>随手写了个测试程序对比它们的效率。<br>算法1计算n=42和算法2计算n=400 000 000所需的时间差不多。<br>由此可见，指数时间复杂度的算法太可怕…<br>但是算法3对于n=400 000 000也几乎一瞬间就算完了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E9%98%85%E8%AF%BB/%E5%BF%83%E5%BE%97/%E6%80%9D%E8%80%83%E7%9A%84%E4%B9%90%E8%B6%A3%EF%BC%9AMatrix67%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1034,103 +1133,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E9%98%85%E8%AF%BB/%E5%BF%83%E5%BE%97/Mr-Feynman-Chapter-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%98%85%E8%AF%BB/%E5%BF%83%E5%BE%97/Mr-Feynman-Chapter-4/" class="post-title-link" itemprop="url">别闹了，费曼先生 | 读书笔记 | 第四章 关于教育</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-01-08 15:00:55" itemprop="dateCreated datePublished" datetime="2013-01-08T15:00:55+08:00">2013-01-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%BF%83%E5%BE%97/" itemprop="url" rel="index">
-                    <span itemprop="name">心得</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E9%98%85%E8%AF%BB/%E5%BF%83%E5%BE%97/Mr-Feynman-Chapter-4/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="阅读/心得/Mr-Feynman-Chapter-4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>别闹了费曼先生，这本书的后面两章都很长。<br>这几天抽时间看完了第四章，有很多好玩的事情，但是最让人印象深刻的是关于教育这一段。</p>
-<p>有关教育的话题太深刻，还是先说说有意思的事情。</p>
-<ol>
-<li>费曼先生去康奈尔大学任教，自认为油尽灯枯，江郎才尽，不过在一次计算盘子飞碟中找到了久违的“玩心”，摆脱了之前的各种消极状态。不过这其中也放弃了去很多研究院和大公司的机会。</li>
-<li>费曼先生一直觉得自己不够man，为了表现man，在酒吧和别人打架。后来认识了夜店的主持人，搞清楚了自己为啥每每都被当成了冤大头，买酒给mm还得不到任何好处。拜师主持人，学到了把妹不被骗的技术。</li>
-<li>心算各种对指数啥的，当然是利用了数字的性质，还用了插值法等等。有个日本算盘高手，就会打算盘，不懂数学，计算方面输给了费曼。懂技术，懂原理很重要啊，哈哈。</li>
-<li>爱玩的费曼先生去了巴西，学了乐器，还参加了狂欢节，最重要的是，受到了美国驻巴西大使馆官员的褒奖…我了个去，这都是啥情况。</li>
-</ol>
-<p>最后，谈谈教育。<br>费曼先生描述了巴西当时的教育情况，当然，他教授物理，也只说了这一科学方面的东西。但是，让我这个受中国教育的孩子，压力很大，很多很多问题在我的身上都有着影子，甚至说是一模一样的。<br>教科书，呆板，按照费曼先生说的，用一个名词去解释另一个名词，学生根本不理解原理或者本质。记得初中刚学物理，那个时候就有光学的法线什么的各种定义，会解题，然后呢？光的相关实验和原理都不知道。本科做了些基础实验，懂了一些。但是有更高深的电磁理论去解释光，这个时候又是只记得一堆定义，不理解，考试就靠些皮毛糊弄过关。<br>学生上课不提问，这样会浪费别人时间，大家就是做笔记，背笔记。巴西许多年前出现的问题，中国现在也有。印象很深的一件事，在百度等待面试，排后面的一个女生拿出一个本子，上面各种计算机基础的定义，原理，比如死锁的条件1234，数据库的xxx1234。还给另一个同学说，这都是她总结的之前笔试面试不会的题，但是很努力了，还是没进过终面。很多学生就是这样学习的，对于很多方面，我也是这么做的。比如操作系统的进程和线程，就会背书上的区别和联系，然后呢？互斥的各种原理背下来了，又能怎么样，都没有亲手实现或者利用他人的成果做实验。这样学来的东西也就能应付考试吧。<br>关于兴趣。我们往往都在完成某种特定的任务，而不是真正的对他感兴趣。从别逗了费曼先生书中，可以看出来，费曼在物理理论方面能有这么高的造诣，完全是因为他对物理很感兴趣，做物理研究对他来说就是玩儿，还玩的很投入，很尽兴。感叹我这些年了，到了大三才觉得计算机有兴趣，也不知道能坚持多久，但愿一直有兴趣下去吧。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1203,7 +1205,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">194</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
