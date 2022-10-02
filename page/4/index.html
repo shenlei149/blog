@@ -202,6 +202,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-83%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-83%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">欧拉项目 | 83题 | 最短路径</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-10 12:22:32" itemprop="dateCreated datePublished" datetime="2019-03-10T12:22:32+08:00">2019-03-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-83%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-83题-最短路径/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=83">Problem 83</a></p>
+<p>一个整数矩阵，从左上角到右下角，存在一条最短路径。走的方式没有要求，在某个点，可以往四个方向走；之前有两个题目，一个是限制只能往右或者往下，稍微复杂点的另一个题目的限制是不能往左。</p>
+<p>我的想法很直接，构造一个矩阵，是从左上角到该点的最短路径，每个点的初始值都是<code>int.MaxValue</code>。<br>用一个<code>queue</code>来保存被更新的点，然后看看其周围的点是否可以被更新。<br>从左上角的点开始，赋值成给定矩阵左上角的值。该值被更新了，把<code>(0, 0)</code>点放入<code>queue</code>里，因为周围的点可能会被更新。<br>然后从<code>queue</code>拿出一个点，看看周围的值是否能被更新，如果是，也放到<code>queue</code>里。<br>循环往复，直到<code>queue</code>为空，没有需要被更新的点了。<br>此时，每个点上的值都是从左上角开始到该点的最短路径。</p>
+<p>代码直接反应了上述的过程，data就是题目总给出的80 * 80的矩阵。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">int</span> N = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">GetAnswer</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>[,] sum = <span class="keyword">new</span> <span class="built_in">int</span>[N, N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum[i, j] = <span class="built_in">int</span>.MaxValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">0</span>, <span class="number">0</span>] = data[<span class="number">0</span>, <span class="number">0</span>];</span><br><span class="line">    Queue&lt;Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;&gt; pointsToBeUpdated = <span class="keyword">new</span> Queue&lt;Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;&gt;();</span><br><span class="line">    pointsToBeUpdated.Enqueue(<span class="keyword">new</span> Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;(<span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">while</span> (pointsToBeUpdated.Count != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> point = pointsToBeUpdated.Dequeue();</span><br><span class="line">        <span class="keyword">if</span> (CanMoveToLeft(point))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> newValue = sum[point.Item1, point.Item2] + data[point.Item1 - <span class="number">1</span>, point.Item2];</span><br><span class="line">            <span class="keyword">if</span> (newValue &lt; sum[point.Item1 - <span class="number">1</span>, point.Item2])</span><br><span class="line">            &#123;</span><br><span class="line">                sum[point.Item1 - <span class="number">1</span>, point.Item2] = newValue;</span><br><span class="line">                pointsToBeUpdated.Enqueue(<span class="keyword">new</span> Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;(point.Item1 - <span class="number">1</span>, point.Item2));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (CanMoveToRight(point))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> newValue = sum[point.Item1, point.Item2] + data[point.Item1 + <span class="number">1</span>, point.Item2];</span><br><span class="line">            <span class="keyword">if</span> (newValue &lt; sum[point.Item1 + <span class="number">1</span>, point.Item2])</span><br><span class="line">            &#123;</span><br><span class="line">                sum[point.Item1 + <span class="number">1</span>, point.Item2] = newValue;</span><br><span class="line">                pointsToBeUpdated.Enqueue(<span class="keyword">new</span> Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;(point.Item1 + <span class="number">1</span>, point.Item2));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (CanUp(point))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> newValue = sum[point.Item1, point.Item2] + data[point.Item1, point.Item2 - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (newValue &lt; sum[point.Item1, point.Item2 - <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                sum[point.Item1, point.Item2 - <span class="number">1</span>] = newValue;</span><br><span class="line">                pointsToBeUpdated.Enqueue(<span class="keyword">new</span> Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;(point.Item1, point.Item2 - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (CanDown(point))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> newValue = sum[point.Item1, point.Item2] + data[point.Item1, point.Item2 + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (newValue &lt; sum[point.Item1, point.Item2 + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                sum[point.Item1, point.Item2 + <span class="number">1</span>] = newValue;</span><br><span class="line">                pointsToBeUpdated.Enqueue(<span class="keyword">new</span> Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt;(point.Item1, point.Item2 + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum[N - <span class="number">1</span>, N - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">CanMoveToLeft</span>(<span class="params">Tuple&lt;<span class="built_in">int</span>, intpoint</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> point.Item1 &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">CanMoveToRight</span>(<span class="params">Tuple&lt;<span class="built_in">int</span>, intpoint</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> point.Item1 &lt; N - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">CanUp</span>(<span class="params">Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt; point</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> point.Item2 &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">CanDown</span>(<span class="params">Tuple&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt; point</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> point.Item2 &lt; N - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-119%E9%A2%98-%E6%9F%90%E6%95%B0%E5%90%84%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C%E7%9A%84%E8%8B%A5%E5%B9%B2%E6%AC%A1%E5%B9%82%E7%AD%89%E4%BA%8E%E8%AF%A5%E6%95%B0%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1111,99 +1204,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-75%E9%A2%98-%E6%95%B4%E6%95%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-75%E9%A2%98-%E6%95%B4%E6%95%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/" class="post-title-link" itemprop="url">欧拉项目 | 75题 | 整数直角三角形</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-02-03 16:36:51" itemprop="dateCreated datePublished" datetime="2018-02-03T16:36:51+08:00">2018-02-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">欧拉项目</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-75%E9%A2%98-%E6%95%B4%E6%95%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-75题-整数直角三角形/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=75" title="Problem 75 - Project Euler">75题链接</a></p>
-<p>给定一个整数L，可能可以弯成一个各边都是整数的直角三角形，也可能不可以。如果可以的话，可能只有一种方法，也可能有多种。<br>比如12，可以组成一个三边都是整数的直角三角形，且只能组出来一个。<br>比如10，无法弯出一个各边都是整数的直角三角形。<br>再比如120，有多种组合(30,40,50), (20,48,52), (24,45,51)。</p>
-<p>L ≤ 1,500,000，有多少个L恰好有唯一一种方法得到直角三角形。</p>
-<p>和Project Euler的很多题目一样，1500000这个值很大，暴力的遍历每个L，然后切分成三段，三段又恰好是直角三角形，这种方法时间复杂度极大，显然不可行。<br>另辟蹊径，我们先想办法找到所有的周长小于MaxL的直角三角形，然后遍历这些三角形，用一个map记住周长出现的次数，最后统计一次的个数即可。<br>现在的问题就是如果找到直角三角形呢？三边其实就是方程x^2 + y^2 = z^2的整数解。<br><img src="/images/ProjectEuler-75.jpg" alt="">  </p>
-<p>现在万事俱备，就差coding了。  </p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> triangles = <span class="keyword">new</span> List&lt;<span class="built_in">long</span>&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">long</span> a = <span class="number">1</span>; a &lt; L / <span class="number">2</span>; a += <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">long</span> b = a + <span class="number">2</span>; a * b &lt; L / <span class="number">2</span>; b += <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Utils.GetGcd(a, b) == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">long</span> k = <span class="number">1</span>; k * a * b &lt; L / <span class="number">2</span>; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">long</span> x = k * a * b;</span><br><span class="line">                <span class="built_in">long</span> y = k * (b * b - a * a) / <span class="number">2</span>;</span><br><span class="line">                <span class="built_in">long</span> z = k * (b * b + a * a) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (x + y + z &lt;= L)</span><br><span class="line">                &#123;</span><br><span class="line">                    triangles.Add(x+y+z);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> countMapping = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">long</span>, <span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= L; i++)</span><br><span class="line">&#123;</span><br><span class="line">    countMapping[i] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> circumference <span class="keyword">in</span> triangles)</span><br><span class="line">&#123;</span><br><span class="line">    countMapping[circumference]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> countMapping.Count(p =&gt; p.Value == <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1276,7 +1276,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">195</span>
+          <span class="site-state-item-count">196</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

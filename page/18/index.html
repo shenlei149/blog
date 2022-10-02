@@ -202,6 +202,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E8%AE%A1%E7%AE%97%E5%BE%AA%E7%8E%AF%E8%8A%82%E9%95%BF%E5%BA%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E8%AE%A1%E7%AE%97%E5%BE%AA%E7%8E%AF%E8%8A%82%E9%95%BF%E5%BA%A6/" class="post-title-link" itemprop="url">计算循环节长度</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-11-20 12:51:18" itemprop="dateCreated datePublished" datetime="2013-11-20T12:51:18+08:00">2013-11-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E8%AE%A1%E7%AE%97%E5%BE%AA%E7%8E%AF%E8%8A%82%E9%95%BF%E5%BA%A6/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/计算循环节长度/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>对于有理数，分成有限小数和无限循环小数。比如1/3 = 0.33333…<br>对于无限循环小数，循环节表示后续循环的部分。比如1/6 = 0.166666…，循环节是6，长度是1。1/7 = 0.1428571428571428…，循环节是142857，长度是6。</p>
+<p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=26" title="Problem 26 - Project Euler">欧拉项目的第二十六题</a>很有意思。基于以上知识，对于任意d &lt; 1000，找到分数1/d循环节最长的那个d。</p>
+<p>如何计算循环节长度呢？<br>想想我们手算，如果余数比除数小，我们会在后面补0然后再除。也就是说补零之后的数是下一次的被除数。如果被除数重复出现，除数确定的，那么商和余数也就是一样的。这时，循环节就出现了。<br>下面的函数分为两部分，</p>
+<ol>
+<li>补零操作</li>
+<li>查找有没有同样的被除数存在，如果有，就找到了循环节，计算循环节长度并返回。在没有找到的前提下，把当前被除数记录下来，并得到余数作为下一次的被除数。<br>这里需要注意，如果某一次出现了除尽的情况，说明该分数是有限小数，循环节长度是0。<br>下面是函数代码：  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// n/m</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">GetRecurringCycle</span>(<span class="params"><span class="built_in">int</span> n, <span class="built_in">int</span> m</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    List&lt;<span class="built_in">int</span>&gt; dividends = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (n &lt; m)</span><br><span class="line">        &#123;</span><br><span class="line">            n *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// search pattern.</span></span><br><span class="line">        <span class="built_in">int</span> index = dividends.IndexOf(n);</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> dividends.Count - index;</span><br><span class="line">        &#125;</span><br><span class="line">        dividends.Add(n);</span><br><span class="line">        n %= m;</span><br><span class="line">        <span class="comment">// n is divisible by m.</span></span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>能够计算循环节长度，得到循环节最长的那个d就易如反掌了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/C-%E5%AE%9E%E7%8E%B0%E5%85%A8%E6%8E%92%E5%88%97-Permutations/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1060,95 +1158,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/Life/%E7%AD%94%E8%BE%A9%E5%AE%8C%E4%BA%86-%E4%BB%8E%E5%AD%A6%E4%B9%A0%E8%B5%B0%E5%90%91%E5%B7%A5%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/Life/%E7%AD%94%E8%BE%A9%E5%AE%8C%E4%BA%86-%E4%BB%8E%E5%AD%A6%E4%B9%A0%E8%B5%B0%E5%90%91%E5%B7%A5%E4%BD%9C/" class="post-title-link" itemprop="url">答辩完了 | 从学习走向工作</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-03-11 15:02:24" itemprop="dateCreated datePublished" datetime="2013-03-11T15:02:24+08:00">2013-03-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Life/%E7%AD%94%E8%BE%A9%E5%AE%8C%E4%BA%86-%E4%BB%8E%E5%AD%A6%E4%B9%A0%E8%B5%B0%E5%90%91%E5%B7%A5%E4%BD%9C/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Life/答辩完了-从学习走向工作/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>上周四答辩完了，跟想象中差不太多，一个一个的，水水的就答辩完了…<br>我是上午11:20-11:40答辩的，一直等待下午6点多，所有人都答辩完了，统一宣布结果，都通过了，大家在一起还呱呱的鼓鼓掌。<br>答辩完成，意味着我近三年的研究生生活就要结束了。</p>
-<p>之前答辩的时候，有很多事情要去做。<br>这十来天没有好好看书，现在事情基本告一段落，也要慢慢的回归爱看书的我，哈哈。</p>
-<p>这三年，我从一个不太会物理也不太会计算机的烂大街学生，成了一个能进一个不错的公司工作的码农。<br>总体说来，还是有很多的进步，具体说来，还有很多的不足。</p>
-<p>我超过18年的学习生涯就要结束了，而走向工作岗位，走向社会。<br>未来的3周，应该没有什么事情，实习工作也不太多，是时候想想以后的事情了。</p>
-<p>学习？！<br>首先是要学习英语，这个不管是在公司干活，还是transfer，或者出去旅游之类，都是必不可少的工具。<br>其次是学习计算机，靠它吃饭呢，不能丢。<br>是一个月左右看一本非英语非计算机的书，传记，历史，科普，人文均可。</p>
-<p>家庭？！<br>租个好点的一居，和傻宝好好过日子。<br>家里可以慢慢地布置的温馨一点。<br>投影？这个近期可以先不考虑。<br>Kinect？下半年开始考虑吧，如果以后工作的闲暇时间比较多，可以优先于投影。</p>
-<p>工作？！<br>进来才知道现在在的Office部门往上升很难，东西成熟，前景确定。<br>不过也要努力才是，不能看到7-8年还没到Sr.就没有动力。<br>好好干活，争取能升级的快点，说白了，希望自己的钱能多点。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1221,7 +1230,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">195</span>
+          <span class="site-state-item-count">196</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

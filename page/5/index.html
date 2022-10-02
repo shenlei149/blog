@@ -202,6 +202,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-75%E9%A2%98-%E6%95%B4%E6%95%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-75%E9%A2%98-%E6%95%B4%E6%95%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/" class="post-title-link" itemprop="url">欧拉项目 | 75题 | 整数直角三角形</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-02-03 16:36:51" itemprop="dateCreated datePublished" datetime="2018-02-03T16:36:51+08:00">2018-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉项目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-75%E9%A2%98-%E6%95%B4%E6%95%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数学/欧拉项目/欧拉项目-75题-整数直角三角形/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=75" title="Problem 75 - Project Euler">75题链接</a></p>
+<p>给定一个整数L，可能可以弯成一个各边都是整数的直角三角形，也可能不可以。如果可以的话，可能只有一种方法，也可能有多种。<br>比如12，可以组成一个三边都是整数的直角三角形，且只能组出来一个。<br>比如10，无法弯出一个各边都是整数的直角三角形。<br>再比如120，有多种组合(30,40,50), (20,48,52), (24,45,51)。</p>
+<p>L ≤ 1,500,000，有多少个L恰好有唯一一种方法得到直角三角形。</p>
+<p>和Project Euler的很多题目一样，1500000这个值很大，暴力的遍历每个L，然后切分成三段，三段又恰好是直角三角形，这种方法时间复杂度极大，显然不可行。<br>另辟蹊径，我们先想办法找到所有的周长小于MaxL的直角三角形，然后遍历这些三角形，用一个map记住周长出现的次数，最后统计一次的个数即可。<br>现在的问题就是如果找到直角三角形呢？三边其实就是方程x^2 + y^2 = z^2的整数解。<br><img src="/images/ProjectEuler-75.jpg" alt="">  </p>
+<p>现在万事俱备，就差coding了。  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> triangles = <span class="keyword">new</span> List&lt;<span class="built_in">long</span>&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">long</span> a = <span class="number">1</span>; a &lt; L / <span class="number">2</span>; a += <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">long</span> b = a + <span class="number">2</span>; a * b &lt; L / <span class="number">2</span>; b += <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Utils.GetGcd(a, b) == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">long</span> k = <span class="number">1</span>; k * a * b &lt; L / <span class="number">2</span>; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">long</span> x = k * a * b;</span><br><span class="line">                <span class="built_in">long</span> y = k * (b * b - a * a) / <span class="number">2</span>;</span><br><span class="line">                <span class="built_in">long</span> z = k * (b * b + a * a) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (x + y + z &lt;= L)</span><br><span class="line">                &#123;</span><br><span class="line">                    triangles.Add(x+y+z);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> countMapping = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">long</span>, <span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= L; i++)</span><br><span class="line">&#123;</span><br><span class="line">    countMapping[i] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> circumference <span class="keyword">in</span> triangles)</span><br><span class="line">&#123;</span><br><span class="line">    countMapping[circumference]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> countMapping.Count(p =&gt; p.Value == <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-518%E9%A2%98-%E8%B4%A8%E6%95%B0%E4%B8%89%E5%85%83%E7%BB%84%E5%92%8C%E7%AD%89%E6%AF%94%E6%95%B0%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1051,96 +1144,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%89%BE%E5%88%B0%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%89%BE%E5%88%B0%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">找到重复元素</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-10-13 16:26:49" itemprop="dateCreated datePublished" datetime="2017-10-13T16:26:49+08:00">2017-10-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%89%BE%E5%88%B0%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/找到重复元素/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>给定一个数组，包含1到N的整数，N最大为32000，数组可能包含重复的值，且N的取值补丁。若只有4KB的内存，如何打印出数组中所有的重复元素呢？</p>
-<p>4KB，4<em>8</em>1024 bits，比32000要大一些。我们可以创建一个32000bits的位向量，其中每个bit代表一个整数。<br>利用这个位向量，遍历整个数组，遇到元素v，如果v对应的bit位已经是1，就打印该数字，否则，把对应bit设置为1。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CheckDuplicates</span>(<span class="params"><span class="built_in">int</span>[] array</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    BitSet bs = <span class="keyword">new</span> BitSet(<span class="number">32000</span>);</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> num <span class="keyword">in</span> array)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> num0 = num - <span class="number">1</span>; <span class="comment">// bs starts at 0, but number starts at 1</span></span><br><span class="line">        <span class="keyword">if</span> (bs.Get(num0))</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            bs.Set(num0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">BitSet</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span>[] bitSet;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BitSet</span>(<span class="params"><span class="built_in">int</span> size</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        bitSet = <span class="keyword">new</span> <span class="built_in">int</span>[size &gt;&gt; <span class="number">5</span>]; <span class="comment">// size / 32</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">Get</span>(<span class="params"><span class="built_in">int</span> pos</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> wordNumber = pos &gt;&gt; <span class="number">5</span>; <span class="comment">// pos / 32</span></span><br><span class="line">        <span class="built_in">int</span> bitNumber = pos &amp; <span class="number">0x1F</span>; <span class="comment">// pos % 32</span></span><br><span class="line">        <span class="keyword">return</span> (bitSet[wordNumber] &amp; (<span class="number">1</span> &lt;&lt; bitNumber)) != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Set</span>(<span class="params"><span class="built_in">int</span> pos</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> wordNumber = pos &gt;&gt; <span class="number">5</span>; <span class="comment">// pos / 32</span></span><br><span class="line">        <span class="built_in">int</span> bitNumber = pos &amp; <span class="number">0x1F</span>; <span class="comment">// pos % 32</span></span><br><span class="line">        bitSet[wordNumber] |= <span class="number">1</span> &lt;&lt; bitNumber;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1213,7 +1216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">195</span>
+          <span class="site-state-item-count">196</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

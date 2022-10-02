@@ -202,6 +202,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%94%9F%E6%88%90%E9%AB%98%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%94%9F%E6%88%90%E9%AB%98%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="post-title-link" itemprop="url">有序数组生成高度最小的二叉搜索树</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-31 11:10:26" itemprop="dateCreated datePublished" datetime="2016-03-31T11:10:26+08:00">2016-03-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%94%9F%E6%88%90%E9%AB%98%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/有序数组生成高度最小的二叉搜索树/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>给一个有序的数组，升序，没有重复的数字，生成一个高度最小的二叉搜索树。</p>
+<p>二叉搜索树具有的特点就是左边节点的值比当前节点的小，右边节点的值比当前节点的大。而一个有序数组，恰恰是二叉搜索树的中序遍历结果。<br>扯了点没用的，想要高度低，就要尽可能的平衡，左右两个子树尽可能的平衡，那么，数组中间的数就是根节点了。左边的树就是数组中间左边的半个数组组成的，右边的树就是数组右边的半个数组组成的。这一段描述，是一个递归的过程，按照这个思路，代码也就有了。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">TreeNode</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> TreeNode&lt;T&gt; Left &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">	<span class="keyword">public</span> TreeNode&lt;T&gt; Right &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">	<span class="keyword">public</span> T Data &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="title">TreeNode</span>&lt;<span class="title">T</span>&gt; <span class="title">CreateMinimalBst</span>&lt;<span class="title">T</span>&gt;(<span class="params">T[] arr, <span class="built_in">int</span> begin, <span class="built_in">int</span> end</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (begin &gt; end)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">int</span> mid = (end - begin) / <span class="number">2</span> + begin;</span><br><span class="line">	<span class="keyword">var</span> node = <span class="keyword">new</span> TreeNode&lt;T&gt;();</span><br><span class="line">	node.Data = arr[mid];</span><br><span class="line">	node.Left = CreateMinimalBst(arr, begin, mid - <span class="number">1</span>);</span><br><span class="line">	node.Right = CreateMinimalBst(arr, mid + <span class="number">1</span>, end);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="title">TreeNode</span>&lt;<span class="title">T</span>&gt; <span class="title">CreateMinimalBst</span>&lt;<span class="title">T</span>&gt;(<span class="params">T[] arr</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> CreateMinimalBst(arr, <span class="number">0</span>, arr.Length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>O(n)的时间复杂度就搞定了这个题目，空间复杂度呢？表面看来，没有使用额外的存储空间，但是递归导致栈空间的增长，O(lg(n))。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%89%BE%E5%87%BA%E7%BC%BA%E5%B0%91%E7%9A%84%E9%82%A3%E4%B8%AA%E6%95%B0%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1064,116 +1157,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/%E8%87%AA%E6%8E%A7%E5%8A%9B9-1%EF%BC%9A%E5%88%AB%E8%AF%BB%E8%BF%99%E7%AB%A0-%E7%BB%93%E8%AF%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/%E8%87%AA%E6%8E%A7%E5%8A%9B9-1%EF%BC%9A%E5%88%AB%E8%AF%BB%E8%BF%99%E7%AB%A0-%E7%BB%93%E8%AF%AD/" class="post-title-link" itemprop="url">自控力9 & -1：别读这章 & 结语</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-12-21 14:57:10" itemprop="dateCreated datePublished" datetime="2015-12-21T14:57:10+08:00">2015-12-21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/" itemprop="url" rel="index">
-                    <span itemprop="name">摘抄&心得</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E9%98%85%E8%AF%BB/%E6%91%98%E6%8A%84-%E5%BF%83%E5%BE%97/%E8%87%AA%E6%8E%A7%E5%8A%9B9-1%EF%BC%9A%E5%88%AB%E8%AF%BB%E8%BF%99%E7%AB%A0-%E7%BB%93%E8%AF%AD/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="阅读/摘抄-心得/自控力9-1：别读这章-结语/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>当人们试着不去想某件事时，反而会比没有控制自己的思维时想得更多，比自己有意去想还要多。<br>这就是小时候听到的喜马拉雅山上的猴子的故事。<br>当我站在观光电梯上时，告诉自己不要害怕，但是自己更加忍不住的害怕。</p>
-<p>当人们试图摆脱一种想法，它却不断回到脑海中，人们很可能认为它一定是真的。</p>
-<p>怎么才能找到摆脱这种困境的方法呢？这个方法本身就很有讽刺意味——放弃自控。当人们不再试图控制那些不希望出现的想法和情绪时，它们就不会再来烦你了。</p>
-<p>我不想有这种感觉<br>越是压抑消极情绪，人越可能变得抑郁。<br>试图压抑焦虑情绪也会事与愿违。<br>如果想让自己远离精神痛苦，人们就需要与这些想法和平相处，而不是把他们推到一边。</p>
-<p>接受自己的想法和感受，但同时也要记住，不要顺着自己的想法去做。即使不试着控制自己的思维，也要控制自己行为。</p>
-<p>如何直面自身欲望，但不要付诸行动呢？  </p>
-<ol>
-<li>承认自己脑海中的欲望，以及渴望某种事物的感觉；  </li>
-<li>不要马上试着转移注意力或与之争论。接受这种想法或者感觉，提醒自己白熊现象和反弹理论；  </li>
-<li>退一步考虑，意识到这种想法和感觉并不受你控制，但是你可以选择是否将这些想法付诸实践；  </li>
-<li>记住你的目标，提醒自己预先作出的承诺。</li>
-</ol>
-<p>为了让我们的头脑远离有害的思想和感受，我们努力去摆脱它们，但往往事倍功半。如果我们想要获得心灵的平静和足够的自控力，我们就需要认识到，控制自己的思想是件不可能的事情。我们能做的就是，选择自己相信什么，选择自己要做什么。</p>
-<p>意志力实验：驾驭冲动<br>无论你对什么上瘾，驾驭冲动的技巧都能帮你抵抗诱惑，而不是屈服于它。<br>当冲动占据占据你的头脑时，花至少一分钟去感觉自己的身体。<br>拒绝按照自己的冲动行事，有时会增加一个人的紧张程度。试着去接受这些感觉，而不是试图否认它们。<br>在这里，呼吸是很有用的。<br>驾驭冲动不只适用于戒除癖好，还能帮助你掌握有害的冲动。</p>
-<p>意志力实验：把我不要变成我想要<br>即使不打算减肥的人，也能从把我不要变成我想要的成功中得到启发。<br>可以做其他有趣的事来代替坏习惯，大多数的癖好和消遣需要从生活的其他部分抽调大量时间和精力。<br>想要改掉坏习惯，可以从培养一个兴趣爱好开始。这样子就占用了大量的时间和精力，就没有时间和精力去做原先做那些不要做的事了。</p>
-<p>意志力实验：忠于你的感受，但别相信你所有的想法<br>关注自己的想法，而不是试着转移注意力。<br>我们要看看这些想法是不是很熟悉？它们都不是你需要相信的重要信息！<br>接下来，把注意力转移到你的身体感受上，看看是否会感觉到紧张，心率或者呼吸是否有变化。<br>不要抑制想法，接受它的存在，但不要相信它。<br>你可以对自己说：好吧，那种想法又来了，又得心烦了。<br>英语不好，又出洋相了。要让自己想，不好嘛，努力学进步就好，而不是觉得自己咋这么笨，这都学不好，前者更容易让人接受，并从那种尴尬中出来，继续把注意力放到应该在的地方。</p>
-<p>读完此书：<br>你对意志力和自控力的想法是否有所改变？<br>意志力和自控力不是洪水猛兽，提起来就让人感到害怕。<br>和世上没有丑女人没有懒女人这种鸡汤相比起来，这本书让我认识到意志力和自控力都是科学的一部分，自诩受过高等教育我，还是相信科学滴，所以用科学的方式对看待它们就好。</p>
-<p>你认为哪个意志力实验对你最有帮助？<br>呼吸法，找人把自己的事变成小集体的事情，观察他人利用反抗控制增强意志力，暂停十分钟法则，这几个感觉都挺有帮助，而且实行起来容易。</p>
-<p>你看到哪一页内容的时候最吃惊？<br>人还不如黑猩猩。现在给你两个糖，或者晚些给你六个糖的实验，居然人更容易被诱惑，更多的人选择前者，完全不能做到利益最大化。太可悲了，还是让黑猩猩统治吧。</p>
-<p>你从这本书中学到了什么？<br>意志力和自控力，与生俱来，但是大脑又会迷惑我们，能像肌肉一样习得，社会或者圈子对此作用也很大。<br>这本书展示了很多科研成果，让我明白，意志力与生俱来的，每个人都有；多巴胺会迷惑我们，追求一些本质上不能让我们开心的事。凡事都是矛盾体，意志力也是这样，我们只有充分了解它，才能有效的控制它。<br>这本书还给出了具体的方法，具有可操作性，让我们去增加意志力，坚定信心去做我要做的事，抵制诱惑拒绝我不要的事，更有行动力去执行我想要的事。</p>
-<p>在未来人生道路上，请保持科学家的心态。尝试新鲜事物，收集自己的证据，根据证据作出判断。对出人意料的想法保持开放的心态，从失败和成功中汲取经验教训。坚持有效的方法，和他人分享了解的知识。面对复杂的人性和现代社会的诱惑，我们最好能做到这几点。如果我们能保持好奇心和自我同情，对付这些就绰绰有余了。</p>
-<p>共勉！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1246,7 +1229,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">195</span>
+          <span class="site-state-item-count">196</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

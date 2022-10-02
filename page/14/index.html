@@ -202,6 +202,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%BB%99%E4%B8%80%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%AD%98%E5%9C%A8%E7%8E%AF%EF%BC%8C%E6%89%BE%E5%87%BA%E8%BF%9B%E5%85%A5%E7%8E%AF%E7%9A%84%E8%B5%B7%E5%A7%8B%E7%BB%93%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/300+300.png">
+      <meta itemprop="name" content="Leo SHEN">
+      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="guozi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%BB%99%E4%B8%80%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%AD%98%E5%9C%A8%E7%8E%AF%EF%BC%8C%E6%89%BE%E5%87%BA%E8%BF%9B%E5%85%A5%E7%8E%AF%E7%9A%84%E8%B5%B7%E5%A7%8B%E7%BB%93%E7%82%B9/" class="post-title-link" itemprop="url">给一个单链表，如果存在环，找出进入环的起始结点</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-11-11 17:26:35" itemprop="dateCreated datePublished" datetime="2014-11-11T17:26:35+08:00">2014-11-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%BB%99%E4%B8%80%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%AD%98%E5%9C%A8%E7%8E%AF%EF%BC%8C%E6%89%BE%E5%87%BA%E8%BF%9B%E5%85%A5%E7%8E%AF%E7%9A%84%E8%B5%B7%E5%A7%8B%E7%BB%93%E7%82%B9/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/给一个单链表，如果存在环，找出进入环的起始结点/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这是一个很经典的面试题目。  </p>
+<p>首先，我们要检测一个链表是否包含环<br>典型的思路，快慢指针。快指针每次移动两个结点，慢指针移动一个结点。就像两辆车在环形跑道上比赛，速度差一倍，那么快的肯定会追上慢的（套圈）。<br>如果快的指针到头了，两者还是没有相遇，那么说明这个链表不包含环。  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> slow = head;</span><br><span class="line"><span class="keyword">var</span> fast = head;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (fast != <span class="literal">null</span> &amp;&amp; fast.Next != <span class="literal">null</span>)</span><br><span class="line">&#123;</span><br><span class="line">    slow = slow.Next;</span><br><span class="line">    fast = fast.Next.Next;</span><br><span class="line">    <span class="keyword">if</span> (slow == fast)   <span class="comment">// 相遇了</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 快的指针到头了，说明没有环，也就无所谓环的起始结点，所以返回null </span></span><br><span class="line"><span class="keyword">if</span> (fast == <span class="literal">null</span> || fast.Next == <span class="literal">null</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们需要知道，他们在哪里相遇了呢？<br>假设非环部分的长度是k，那么，慢指针走了k步，位于环的起始位置，快指针走了2k步，除去非环部分的k步，快指针在环里面走了k步，考虑k可能比环的长度大，我们可以认为，快指针从环起始位置往前走了M = k % LoopSize步，也就是说，快指针比慢指针快了M步，从另一个角度看，快指针比慢指针慢了LoopSize - M步。</p>
+<p>之后，慢指针走LoopSize - M步，快指针走2 * (LoopSize - M)步，两者相遇。相遇点距离环的起始位置距离是LoopSize - M（从环的起始结点向前走）。  </p>
+<p>找到了相遇位置，如何利用这个信息找到环的起始结点呢？<br>从相遇点再走多远能到环的起始点呢？M。<br>M和k有什么关系呢？模。k= M + N * LoopSize。那么，从另外一个角度看，从链表开始到环的开始之间是k步;从相遇点继续向前，也是k步就到了环的起始结点，无非是在环里面绕零圈，还是多绕几圈的区别。<br>知道了这个我们就可以解决这个问题了。<br>当找到相遇点之后，把慢指针拿到链表开头，快指针不动，但是每次只移动一步，当两个指针再次相遇的时候，就到了环起始结点。  </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">slow = head;</span><br><span class="line"><span class="keyword">while</span> (slow != fast)</span><br><span class="line">&#123;</span><br><span class="line">    slow = slow.Next;</span><br><span class="line">    fast = fast.Next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> fast;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E6%98%AF%E5%9B%9E%E6%96%87%EF%BC%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1033,100 +1128,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%A4%9A%E5%B0%91%E6%8A%8A%E9%94%81%E6%98%AF%E5%BC%80%E7%9D%80%E7%9A%84%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/300+300.png">
-      <meta itemprop="name" content="Leo SHEN">
-      <meta itemprop="description" content="记录点什么帮助自己进步，如果能帮助别人，手有余香">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="guozi">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%A4%9A%E5%B0%91%E6%8A%8A%E9%94%81%E6%98%AF%E5%BC%80%E7%9D%80%E7%9A%84%EF%BC%9F/" class="post-title-link" itemprop="url">有多少把锁是开着的？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-10-22 16:20:14" itemprop="dateCreated datePublished" datetime="2014-10-22T16:20:14+08:00">2014-10-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%A4%9A%E5%B0%91%E6%8A%8A%E9%94%81%E6%98%AF%E5%BC%80%E7%9D%80%E7%9A%84%EF%BC%9F/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="计算机/算法/有多少把锁是开着的？/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>有100把锁，编号为1,2,3,…,100。一个人先把他们都打开。第二次，把能整除2的锁锁上。第三次，切换能整除3的锁的开闭状态，也就是说，把开着的锁关上，把锁着的锁打开。第四次，切换能整除4的锁的开闭状态。依次类推，操作进行100次。那么，现在问题来了，有多少把锁是开着的？</p>
-<p>先分析下，一个锁到底被切换了多少次状态？<br>比如第15把锁，在第1,3,5,15次操作的时候被切换了状态，第一次打开，第三次关上，第五次又打开，第十五次关上。</p>
-<p>什么样的锁是被打开的呢？<br>如果第X把锁，X有奇数个因数，他就被操作了奇数次，打开，关上，打开…关上，打开。最后的状态时打开的。</p>
-<p>什么时候X有奇数个因数呢？<br>X是完全平方数。因为因数是成对出现的，比如36,1和36,9和4,等等。6和6是一对，但是他们是同一个因数。</p>
-<p>1-100有多少个完全平方数呢？<br>十个。1的平方，2的平方，3的平方，。。。10的平方。</p>
-<p>所以，最后有十把锁是开着的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1199,7 +1200,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">195</span>
+          <span class="site-state-item-count">196</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
