@@ -13,8 +13,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://guozi149.me
-root: /
+url: http://guozi149.me/blog
+root: /blog/
 permalink: :category/:title/
 permalink_defaults:
 pretty_urls:
@@ -99,5 +99,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:shenlei149/shenlei149.github.io.git
-  branch: master
+  repo: git@github.com:shenlei149/blog.git
+  branch: deployment
