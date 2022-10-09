@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="我们都知道C++的vector的容量会随着添加的元素而自动增长，但是每次增长多少呢？原来的两倍？三倍？还是多少？下面，让我们来研究下增长因子是如何确定的。 首先，要阐述一个vector实现相关的事实：vector使用allocator，而不是realloc，所以，不管你增长因子是多少，必然需要重新copy-cons(或move-cons)一遍。 废话不多讲了，下面进入正题。假设，我们用了一个vec">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++中vector的增长因子">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="我们都知道C++的vector的容量会随着添加的元素而自动增长，但是每次增长多少呢？原来的两倍？三倍？还是多少？下面，让我们来研究下增长因子是如何确定的。 首先，要阐述一个vector实现相关的事实：vector使用allocator，而不是realloc，所以，不管你增长因子是多少，必然需要重新copy-cons(或move-cons)一遍。 废话不多讲了，下面进入正题。假设，我们用了一个vec">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="内存">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -618,7 +618,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-%E4%B8%ADvector%E7%9A%84%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90/",
             identifier: "计算机/计算机基础/C-中vector的增长因子/",
             title: "C++中vector的增长因子"
           }

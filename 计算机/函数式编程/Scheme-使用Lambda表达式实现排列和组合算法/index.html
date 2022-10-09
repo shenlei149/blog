@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="在Scheme定义一个函数，通常写法如下： 12(define (sum x y)  (+ x y)) 还有一种类似于定义变量的方式： 12(define sum (lambda (x y)  (+ x y))) 利用lambda表达式，把sum和一个匿名函数联系在一起。这种方式有点类似于JS： 1var sum &#x3D; function(x, y) &amp;#123; return x + y; &amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scheme: 使用Lambda表达式实现排列和组合算法">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="在Scheme定义一个函数，通常写法如下： 12(define (sum x y)  (+ x y)) 还有一种类似于定义变量的方式： 12(define sum (lambda (x y)  (+ x y))) 利用lambda表达式，把sum和一个匿名函数联系在一起。这种方式有点类似于JS： 1var sum &#x3D; function(x, y) &amp;#123; return x + y; &amp;#12">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="组合">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -575,7 +575,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Scheme-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88%E7%AE%97%E6%B3%95/",
             identifier: "计算机/函数式编程/Scheme-使用Lambda表达式实现排列和组合算法/",
             title: "Scheme: 使用Lambda表达式实现排列和组合算法"
           }

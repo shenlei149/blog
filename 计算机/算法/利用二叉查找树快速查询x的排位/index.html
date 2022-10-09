@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="问题：你正在读一个整数数据流。在读的过程中，你可能需要要知道某个值x在已读数据的排位，实现这个功能。也就是说，你需要实现一个方法track(int x)，每读入一个整数，就会调用一次该方法。实现方法getRankOfNumber(int x)，返回小于等于x的值的数量。 简单的方式，维护一个有序的数组。getRankOfNumber方法很高效，二分查找就好了。但是track方法很慢，插入到合适的地">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用二叉查找树快速查询x的排位">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="问题：你正在读一个整数数据流。在读的过程中，你可能需要要知道某个值x在已读数据的排位，实现这个功能。也就是说，你需要实现一个方法track(int x)，每读入一个整数，就会调用一次该方法。实现方法getRankOfNumber(int x)，返回小于等于x的值的数量。 简单的方式，维护一个有序的数组。getRankOfNumber方法很高效，二分查找就好了。但是track方法很慢，插入到合适的地">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="查找">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -559,7 +559,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A9%E7%94%A8%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2x%E7%9A%84%E6%8E%92%E4%BD%8D/",
             identifier: "计算机/算法/利用二叉查找树快速查询x的排位/",
             title: "利用二叉查找树快速查询x的排位"
           }

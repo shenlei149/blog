@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="在C语言中，没有提供任何泛型能力，但是，有神奇void*，只要运用恰当，能写出通用的『泛型』函数。在这里，『泛型』打了引号，表示并非真的是C#这种支持泛型语言中的含义，而是表示一种通用的意思。 关于这个主题，打算写上下两篇。上篇有关函数本身，写两个函数swap和lsearch来说明如何利用void*来写出通用的程序。下篇写一个通用的Stack来说明在C语言里面也能写出通用的数据结构。 首先来看第一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C-Style『泛型』（上）：函数swap &amp; lsearch">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="在C语言中，没有提供任何泛型能力，但是，有神奇void*，只要运用恰当，能写出通用的『泛型』函数。在这里，『泛型』打了引号，表示并非真的是C#这种支持泛型语言中的含义，而是表示一种通用的意思。 关于这个主题，打算写上下两篇。上篇有关函数本身，写两个函数swap和lsearch来说明如何利用void*来写出通用的程序。下篇写一个通用的Stack来说明在C语言里面也能写出通用的数据结构。 首先来看第一">
 <meta property="og:locale" content="zh_CN">
@@ -60,7 +60,7 @@
 <meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/">
 
 
 <script id="page-configurations">
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -572,7 +572,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%87%BD%E6%95%B0swap-lsearch/",
             identifier: "计算机/计算机基础/C-Style『泛型』（上）：函数swap-lsearch/",
             title: "C-Style『泛型』（上）：函数swap & lsearch"
           }

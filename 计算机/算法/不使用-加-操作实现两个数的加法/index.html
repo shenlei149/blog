@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="看到这个题，第一直觉是使用位运算。为什么这么说呢？首先，不能使用 + 这个符号，你还能用什么呢；其次，计算机就是使用位运算来计算加法的。 我们需要真的搞明白加法的原理，然后用程序去实现它。 简单起见，我们考虑十进制。想想我们小时候是如何计算759 + 674的，末位相加，大于10了，然后进一。然后加十位上的数字，还要加上个位的进位。以此类推。计算二进制也是类似的，对每一位相加，如果可能，还要进位。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="不使用 加 操作实现两个数的加法">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="看到这个题，第一直觉是使用位运算。为什么这么说呢？首先，不能使用 + 这个符号，你还能用什么呢；其次，计算机就是使用位运算来计算加法的。 我们需要真的搞明白加法的原理，然后用程序去实现它。 简单起见，我们考虑十进制。想想我们小时候是如何计算759 + 674的，末位相加，大于10了，然后进一。然后加十位上的数字，还要加上个位的进位。以此类推。计算二进制也是类似的，对每一位相加，如果可能，还要进位。">
 <meta property="og:locale" content="zh_CN">
@@ -61,7 +61,7 @@
 <meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -569,7 +569,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8-%E5%8A%A0-%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/",
             identifier: "计算机/算法/不使用-加-操作实现两个数的加法/",
             title: "不使用 加 操作实现两个数的加法"
           }

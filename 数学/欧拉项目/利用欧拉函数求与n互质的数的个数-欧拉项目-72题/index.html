@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="题目本身是问，分母不超过一百万的最简真分数的集合中包含多少元素？  考虑分数 n&#x2F;d, 其中n 和 d 是正整数。如果 n &lt; d 并且最大公约数 HCF(n,d)&#x3D;1, 它被称作一个最简真分数。如果我们将d ≤ 8的最简真分数按照大小的升序列出来，我们得到：1&#x2F;8, 1&#x2F;7, 1&#x2F;6, 1&#x2F;5, 1&#x2F;4, 2&#x2F;7, 1&#x2F;3, 3&#x2F;8, 2&#x2F;5 , 3&#x2F;7, 1&#x2F;2, 4&#x2F;7, 3&#x2F;5, 5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用欧拉函数求与n互质的数的个数 | 欧拉项目 | 72题">
-<meta property="og:url" content="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="题目本身是问，分母不超过一百万的最简真分数的集合中包含多少元素？  考虑分数 n&#x2F;d, 其中n 和 d 是正整数。如果 n &lt; d 并且最大公约数 HCF(n,d)&#x3D;1, 它被称作一个最简真分数。如果我们将d ≤ 8的最简真分数按照大小的升序列出来，我们得到：1&#x2F;8, 1&#x2F;7, 1&#x2F;6, 1&#x2F;5, 1&#x2F;4, 2&#x2F;7, 1&#x2F;3, 3&#x2F;8, 2&#x2F;5 , 3&#x2F;7, 1&#x2F;2, 4&#x2F;7, 3&#x2F;5, 5">
 <meta property="og:locale" content="zh_CN">
@@ -63,7 +63,7 @@
 <meta property="article:tag" content="欧拉函数">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/">
+<link rel="canonical" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -208,7 +208,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -568,7 +568,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/",
+            url: "http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E5%88%A9%E7%94%A8%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%B1%82%E4%B8%8En%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-72%E9%A2%98/",
             identifier: "数学/欧拉项目/利用欧拉函数求与n互质的数的个数-欧拉项目-72题/",
             title: "利用欧拉函数求与n互质的数的个数 | 欧拉项目 | 72题"
           }

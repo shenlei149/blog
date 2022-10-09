@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="这里是问题的原始链接 通过置换*3的第一位得到的9个数中，有六个是质数：13,23,43,53，73和83。 通过用同样的数字置换56**3的第三位和第四位，这个五位数是第一个能够得到七个质数的数字，得到的质数是：56003, 56113, 56333, 56443, 56663, 56773, 和 56993。因此其中最小的56003就是具有这个性质的最小的质数。 找出最小的质数，通过用同样的数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉项目 | 题目51 | 找出最小的能够通过改变同一部分得到八个质数的质数">
-<meta property="og:url" content="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="这里是问题的原始链接 通过置换*3的第一位得到的9个数中，有六个是质数：13,23,43,53，73和83。 通过用同样的数字置换56**3的第三位和第四位，这个五位数是第一个能够得到七个质数的数字，得到的质数是：56003, 56113, 56333, 56443, 56663, 56773, 和 56993。因此其中最小的56003就是具有这个性质的最小的质数。 找出最小的质数，通过用同样的数">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="Project Euler">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/">
+<link rel="canonical" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -583,7 +583,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/",
+            url: "http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E9%A2%98%E7%9B%AE51-%E6%89%BE%E5%87%BA%E6%9C%80%E5%B0%8F%E7%9A%84%E8%83%BD%E5%A4%9F%E9%80%9A%E8%BF%87%E6%94%B9%E5%8F%98%E5%90%8C%E4%B8%80%E9%83%A8%E5%88%86%E5%BE%97%E5%88%B0%E5%85%AB%E4%B8%AA%E8%B4%A8%E6%95%B0%E7%9A%84%E8%B4%A8%E6%95%B0/",
             identifier: "数学/欧拉项目/欧拉项目-题目51-找出最小的能够通过改变同一部分得到八个质数的质数/",
             title: "欧拉项目 | 题目51 | 找出最小的能够通过改变同一部分得到八个质数的质数"
           }

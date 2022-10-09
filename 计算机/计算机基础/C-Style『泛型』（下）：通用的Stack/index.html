@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="内容简介：定义Stack头文件，实现Stack；引出为什么会内存泄漏；修复这个问题。 首先，我们定义头文件。 1234567891011121314struct Stack &amp;#123;    void *elements;    int eleSize;    int logicalLength;    int allocLength;&amp;#125;;void StackNew(Stack *s,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C-Style『泛型』（下）：通用的Stack">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="内容简介：定义Stack头文件，实现Stack；引出为什么会内存泄漏；修复这个问题。 首先，我们定义头文件。 1234567891011121314struct Stack &amp;#123;    void *elements;    int eleSize;    int logicalLength;    int allocLength;&amp;#125;;void StackNew(Stack *s,">
 <meta property="og:locale" content="zh_CN">
@@ -60,7 +60,7 @@
 <meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/">
 
 
 <script id="page-configurations">
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -575,7 +575,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/C-Style%E3%80%8E%E6%B3%9B%E5%9E%8B%E3%80%8F%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E9%80%9A%E7%94%A8%E7%9A%84Stack/",
             identifier: "计算机/计算机基础/C-Style『泛型』（下）：通用的Stack/",
             title: "C-Style『泛型』（下）：通用的Stack"
           }

@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="原题链接如果一个盒子里有21个有色的碟子，15个蓝色的和6个红色的。从中随机取两个，可知取到两个蓝碟子的几率是 P(BB) &#x3D; (15&#x2F;21)×(14&#x2F;20) &#x3D; 1&#x2F;2。下一个满足此条件（即随机取两个碟子的情况下取到两个蓝色碟子的几率是50%）的情况是85个蓝碟子和35个红碟子。对于包含超过10 ^ 12 &#x3D; 1,000,000,000,000个碟子的情况中，满足上述条件的并包含最少碟子的情况，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pell方程 | 求特殊的二元二次方程的整数解 | 欧拉项目 | 100题">
-<meta property="og:url" content="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="原题链接如果一个盒子里有21个有色的碟子，15个蓝色的和6个红色的。从中随机取两个，可知取到两个蓝碟子的几率是 P(BB) &#x3D; (15&#x2F;21)×(14&#x2F;20) &#x3D; 1&#x2F;2。下一个满足此条件（即随机取两个碟子的情况下取到两个蓝色碟子的几率是50%）的情况是85个蓝碟子和35个红碟子。对于包含超过10 ^ 12 &#x3D; 1,000,000,000,000个碟子的情况中，满足上述条件的并包含最少碟子的情况，">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="Project Euler">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/">
+<link rel="canonical" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -561,7 +561,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/",
+            url: "http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/Pell%E6%96%B9%E7%A8%8B-%E6%B1%82%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E6%95%B4%E6%95%B0%E8%A7%A3-%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-100%E9%A2%98/",
             identifier: "数学/欧拉项目/Pell方程-求特殊的二元二次方程的整数解-欧拉项目-100题/",
             title: "Pell方程 | 求特殊的二元二次方程的整数解 | 欧拉项目 | 100题"
           }

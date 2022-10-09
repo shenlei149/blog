@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="按照升序对栈进行排序，也就是说，最大元素在栈顶。最多只能使用一个额外的栈来存放临时数据，但是不能使用额外的数据结构，比如数组来保存临时数据。严格要求只能使用O(1)的额外临时空间外加一个O(n)的栈。 假设我们待排序的栈是s1，额外有一个栈s2，s1是无序的，s2是有序的。考察s1栈顶的元素，pop出来放到临时变量tmp里面，peek s2的栈顶元素，和tmp进行比较，如果比tmp大，那么就pop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="不使用额外的数据结构对栈元素进行排序">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="按照升序对栈进行排序，也就是说，最大元素在栈顶。最多只能使用一个额外的栈来存放临时数据，但是不能使用额外的数据结构，比如数组来保存临时数据。严格要求只能使用O(1)的额外临时空间外加一个O(n)的栈。 假设我们待排序的栈是s1，额外有一个栈s2，s1是无序的，s2是有序的。考察s1栈顶的元素，pop出来放到临时变量tmp里面，peek s2的栈顶元素，和tmp进行比较，如果比tmp大，那么就pop">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -560,7 +560,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AF%B9%E6%A0%88%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/",
             identifier: "计算机/算法/不使用额外的数据结构对栈元素进行排序/",
             title: "不使用额外的数据结构对栈元素进行排序"
           }

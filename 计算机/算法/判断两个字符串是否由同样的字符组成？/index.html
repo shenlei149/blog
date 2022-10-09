@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="给定两个字符串，写一个方法，判断一个字符串是否可以由另一个字符串变换字符顺序得到？ 和大多数面试题一样，你往往可以和面试官交流，把一些有可能出现不同理解的地方都弄清楚。比如大小写敏感啊，空白字符算一个字符吗等等。我们假定大小写敏感，空白字符也算为前提，进行分析。 首先，如果两个字符串的长度不一样，可以直接返回false了。解法一，将两个字符串排序，然后对比一下。如果一样，说明一个字符串可以由另外一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断两个字符串是否由同样的字符组成？">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="给定两个字符串，写一个方法，判断一个字符串是否可以由另一个字符串变换字符顺序得到？ 和大多数面试题一样，你往往可以和面试官交流，把一些有可能出现不同理解的地方都弄清楚。比如大小写敏感啊，空白字符算一个字符吗等等。我们假定大小写敏感，空白字符也算为前提，进行分析。 首先，如果两个字符串的长度不一样，可以直接返回false了。解法一，将两个字符串排序，然后对比一下。如果一样，说明一个字符串可以由另外一">
 <meta property="og:locale" content="zh_CN">
@@ -61,7 +61,7 @@
 <meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/">
 
 
 <script id="page-configurations">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -560,7 +560,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%94%B1%E5%90%8C%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%EF%BC%9F/",
             identifier: "计算机/算法/判断两个字符串是否由同样的字符组成？/",
             title: "判断两个字符串是否由同样的字符组成？"
           }

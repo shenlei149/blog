@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="粗一看，扫面矩阵，遇到0之后把所在行所在列的都设置成0。但是，很快会发现，整个矩阵都是0了。这显然不符合题目的要求。 正确的做法应该是先扫面一次矩阵，看那些位置上出现了0，我们不用精确的记录位置，只要记录要标记为0的行号和列号就好了，这里，使用bool数组完成这件事。接着第二次扫描数组，根据第一次扫描记录的结果，把对应元素设置成0即可。 123456789101112131415161718192">
 <meta property="og:type" content="article">
 <meta property="og:title" content="矩阵：如果某元素为零，则设置所在行整所在列的所有元素为零">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="粗一看，扫面矩阵，遇到0之后把所在行所在列的都设置成0。但是，很快会发现，整个矩阵都是0了。这显然不符合题目的要求。 正确的做法应该是先扫面一次矩阵，看那些位置上出现了0，我们不用精确的记录位置，只要记录要标记为0的行号和列号就好了，这里，使用bool数组完成这件事。接着第二次扫描数组，根据第一次扫描记录的结果，把对应元素设置成0即可。 123456789101112131415161718192">
 <meta property="og:locale" content="zh_CN">
@@ -61,7 +61,7 @@
 <meta property="article:tag" content="矩阵">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/">
 
 
 <script id="page-configurations">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -555,7 +555,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9F%90%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AE%E6%89%80%E5%9C%A8%E8%A1%8C%E6%95%B4%E6%89%80%E5%9C%A8%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%BA%E9%9B%B6/",
             identifier: "计算机/算法/矩阵：如果某元素为零，则设置所在行整所在列的所有元素为零/",
             title: "矩阵：如果某元素为零，则设置所在行整所在列的所有元素为零"
           }

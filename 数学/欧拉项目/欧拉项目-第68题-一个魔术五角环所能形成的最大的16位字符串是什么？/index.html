@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="题目太长，这里就不描述了，这里是题目   字符串是16位，那么数字10肯定在外圈，因为内圈的数字会被用两次，长度就是17了。题目一个要求是从外围的最小数开始，现在又要保证字符串最大，那么如果6,7,8,9,10都在外圈，字符串就是6开头，否则至少是5开头，比6开头要小，所以要使得其最大化，6,7,8,9,10都在外圈。参考三角环中数字最大的形式，4,5,6三个数字逆时针旋转，于是乎我也如法炮制，让">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉项目 | 第68题 | 一个魔术五角环所能形成的最大的16位字符串是什么？ ">
-<meta property="og:url" content="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="题目太长，这里就不描述了，这里是题目   字符串是16位，那么数字10肯定在外圈，因为内圈的数字会被用两次，长度就是17了。题目一个要求是从外围的最小数开始，现在又要保证字符串最大，那么如果6,7,8,9,10都在外圈，字符串就是6开头，否则至少是5开头，比6开头要小，所以要使得其最大化，6,7,8,9,10都在外圈。参考三角环中数字最大的形式，4,5,6三个数字逆时针旋转，于是乎我也如法炮制，让">
 <meta property="og:locale" content="zh_CN">
@@ -65,7 +65,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://guozi149.me/images/ProjectEuler-68.png">
 
-<link rel="canonical" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
+<link rel="canonical" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
 
 
 <script id="page-configurations">
@@ -210,7 +210,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -565,7 +565,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/",
+            url: "http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-%E7%AC%AC68%E9%A2%98-%E4%B8%80%E4%B8%AA%E9%AD%94%E6%9C%AF%E4%BA%94%E8%A7%92%E7%8E%AF%E6%89%80%E8%83%BD%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%8416%E4%BD%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/",
             identifier: "数学/欧拉项目/欧拉项目-第68题-一个魔术五角环所能形成的最大的16位字符串是什么？/",
             title: "欧拉项目 | 第68题 | 一个魔术五角环所能形成的最大的16位字符串是什么？ "
           }

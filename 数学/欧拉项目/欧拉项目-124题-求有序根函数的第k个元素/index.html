@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="欧拉项目的124题题意是：n的根函数，rad(n)，定义为其所有不同质因子之积。例如，504 &#x3D; 2^3 + 3^2 * 7, 所以 rad(504) &#x3D; 2 * 3 * 7 &#x3D; 42令E(k)是求得了前n个rad(n)之后排序，第k个所对应的n。n从1到100000，求得rad(n)，问题是要求E(10000)。   这道题的第一步是分解质因数。为此，我先生成了一个数组primes，放了从1到1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉项目 124题 | 求有序根函数的第k个元素">
-<meta property="og:url" content="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="欧拉项目的124题题意是：n的根函数，rad(n)，定义为其所有不同质因子之积。例如，504 &#x3D; 2^3 + 3^2 * 7, 所以 rad(504) &#x3D; 2 * 3 * 7 &#x3D; 42令E(k)是求得了前n个rad(n)之后排序，第k个所对应的n。n从1到100000，求得rad(n)，问题是要求E(10000)。   这道题的第一步是分解质因数。为此，我先生成了一个数组primes，放了从1到1">
 <meta property="og:locale" content="zh_CN">
@@ -63,7 +63,7 @@
 <meta property="article:tag" content="分解质因数">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/">
+<link rel="canonical" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/">
 
 
 <script id="page-configurations">
@@ -208,7 +208,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -566,7 +566,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/",
+            url: "http://guozi149.me/blog/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-124%E9%A2%98-%E6%B1%82%E6%9C%89%E5%BA%8F%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E7%AC%ACk%E4%B8%AA%E5%85%83%E7%B4%A0/",
             identifier: "数学/欧拉项目/欧拉项目-124题-求有序根函数的第k个元素/",
             title: "欧拉项目 124题 | 求有序根函数的第k个元素"
           }

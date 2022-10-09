@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="原题链接 从矩阵的左边一行的任意一个元素开始，可以往上、往下、往右前进，到达最右边的某个元素为止。由此形成了一条路径，要求使得该路径上的数字之和最小。 题中的5 * 5的矩阵可以用于测试和debug，最后要求给出答案的是一个80 * 80的矩阵。 这是一道典型的动态规划题目。 初始化一个80 * 80的二维数组用于保存结果。第一列就是矩阵的第一列。 然后从j - 1列向j列前进。考虑第i行，可以是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉项目 | 82题 | 三方向的最小和路径">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="原题链接 从矩阵的左边一行的任意一个元素开始，可以往上、往下、往右前进，到达最右边的某个元素为止。由此形成了一条路径，要求使得该路径上的数字之和最小。 题中的5 * 5的矩阵可以用于测试和debug，最后要求给出答案的是一个80 * 80的矩阵。 这是一道典型的动态规划题目。 初始化一个80 * 80的二维数组用于保存结果。第一列就是矩阵的第一列。 然后从j - 1列向j列前进。考虑第i行，可以是">
 <meta property="og:locale" content="zh_CN">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -562,7 +562,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%AC%A7%E6%8B%89%E9%A1%B9%E7%9B%AE-82%E9%A2%98-%E4%B8%89%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%80%E5%B0%8F%E5%92%8C%E8%B7%AF%E5%BE%84/",
             identifier: "计算机/算法/欧拉项目-82题-三方向的最小和路径/",
             title: "欧拉项目 | 82题 | 三方向的最小和路径"
           }

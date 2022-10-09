@@ -20,7 +20,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://guozi149.me').hostname,
+    hostname: new URL('http://guozi149.me/blog').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.6.0',
@@ -50,7 +50,7 @@
   <meta name="description" content="在写递归函数之前，先简单介绍几个后续会用到的内置函数：car 返回列表的第一个元素，列表不能是空’()(car ‘(1 2 3))1(car ‘((1 2) 3))‘(1 2) cdr 返回一个列表但不包含第一个元素，同样，列表不能为空’()(cdr ‘(1 2 3))‘(2 3)(cdr ‘((1 2) (2 3) 4))‘((2 3) 4) car和cdr可以组合使用，比如cadr表示从不包含">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神奇的Scheme之强大的递归思想">
-<meta property="og:url" content="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/index.html">
+<meta property="og:url" content="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/index.html">
 <meta property="og:site_name" content="guozi">
 <meta property="og:description" content="在写递归函数之前，先简单介绍几个后续会用到的内置函数：car 返回列表的第一个元素，列表不能是空’()(car ‘(1 2 3))1(car ‘((1 2) 3))‘(1 2) cdr 返回一个列表但不包含第一个元素，同样，列表不能为空’()(cdr ‘(1 2 3))‘(2 3)(cdr ‘((1 2) (2 3) 4))‘((2 3) 4) car和cdr可以组合使用，比如cadr表示从不包含">
 <meta property="og:locale" content="zh_CN">
@@ -61,7 +61,7 @@
 <meta property="article:tag" content="递归">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/">
+<link rel="canonical" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/">
 
 
 <script id="page-configurations">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/">
+    <link itemprop="mainEntityOfPage" href="http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/300+300.png">
@@ -564,7 +564,7 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://guozi149.me/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/",
+            url: "http://guozi149.me/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E7%A5%9E%E5%A5%87%E7%9A%84Scheme%E4%B9%8B%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E6%83%B3/",
             identifier: "计算机/函数式编程/神奇的Scheme之强大的递归思想/",
             title: "神奇的Scheme之强大的递归思想"
           }
